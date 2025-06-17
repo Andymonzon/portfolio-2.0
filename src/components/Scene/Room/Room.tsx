@@ -2457,7 +2457,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
               <group name="Plane002">
                 <mesh
                   name="Plane002_Material064_0"
-                  castShadow
                   receiveShadow
                   geometry={nodes.Plane002_Material064_0.geometry}
                   material={materials["Material.064"]}
