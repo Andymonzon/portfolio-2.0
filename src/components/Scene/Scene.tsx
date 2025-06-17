@@ -1,4 +1,4 @@
-import { PerspectiveCamera } from "@react-three/drei";
+import { PerspectiveCamera, Stars } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { Lights } from "./Lights/Lights";
 import { Room } from "./Room/Room";
@@ -22,6 +22,7 @@ export const Scene = () => {
 
       <Lights lightLampRef={lightLampRef} />
 
+      <Stars radius={450} />
       <Room lightLampRef={lightLampRef} />
     </Canvas>
   );

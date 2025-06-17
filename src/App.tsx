@@ -1,8 +1,25 @@
+import { useState } from "react";
 import { Scene } from "./components/Scene/Scene";
 
 function App() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const handlePlay = () => {
+    if (isPlaying) return;
+    setIsPlaying(true);
+    const rain = new Audio("/audio/rain.mp3");
+    const onePiece = new Audio("/audio/onepieceLofi.mp3");
+    rain.volume = 0.03;
+    rain.loop = true;
+    rain.play();
+
+    onePiece.volume = 0.03;
+    onePiece.loop = true;
+    onePiece.play();
+  };
+
   return (
     <div
+      onClick={handlePlay}
       className="w-screen h-screen"
       style={{
         background:
