@@ -4,12 +4,15 @@ import { SpotLight } from "three";
 import { useFrame } from "@react-three/fiber";
 import { MeshstandardMaterial } from "three";
 import { ModelOutline } from "./ModelOutline/ModelOutline";
+import { useContextAction } from "../../../hooks/useContextAction";
 
 interface Props {
   lightLampRef: React.RefObject<SpotLight | null>;
 }
 
 export const Room = ({ lightLampRef, ...props }: Props) => {
+  const { dispatchIsPlaying, refGlobalMusic } = useContextAction();
+
   const [objectSelected, setObjectSelected] = useState<string>("");
 
   const group = useRef(null);
@@ -2302,6 +2305,11 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           <group name="29b256d4dadd4d4f9ba3b983510f3b85objcleanermaterialmergergle">
             <mesh
               name="parlante3d"
+              onClick={(e) => {
+                e.stopPropagation();
+                refGlobalMusic.current = true;
+                dispatchIsPlaying({ type: "STOP" });
+              }}
               castShadow
               receiveShadow
               geometry={nodes.Object_2002.geometry}
