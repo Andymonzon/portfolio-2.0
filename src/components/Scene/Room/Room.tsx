@@ -1,14 +1,17 @@
-import { useEffect, useRef } from "react";
-import { useGLTF, useAnimations } from "@react-three/drei";
+import { useEffect, useRef, useState } from "react";
+import { useGLTF, useAnimations, Outlines } from "@react-three/drei";
 import { SpotLight } from "three";
 import { useFrame } from "@react-three/fiber";
 import { MeshstandardMaterial } from "three";
+import { ModelOutline } from "./ModelOutline/ModelOutline";
 
 interface Props {
   lightLampRef: React.RefObject<SpotLight | null>;
 }
 
 export const Room = ({ lightLampRef, ...props }: Props) => {
+  const [objectSelected, setObjectSelected] = useState<string>("");
+
   const group = useRef(null);
   const { nodes, materials, animations } = useGLTF(
     "/model/cuartoPortfolio.glb"
@@ -19,7 +22,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
 
   useFrame(() => {
     actions["mob_huevoAction"]?.play();
-  }, []);
+  });
 
   useEffect(() => {
     if (lampRef.current && lightLampRef.current) {
@@ -2298,12 +2301,19 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
         <group name="parlante">
           <group name="29b256d4dadd4d4f9ba3b983510f3b85objcleanermaterialmergergle">
             <mesh
-              name="Object_2002"
+              name="parlante3d"
               castShadow
               receiveShadow
               geometry={nodes.Object_2002.geometry}
               material={materials.None}
-            />
+              onPointerOver={() => setObjectSelected("parlante3d")}
+              onPointerOut={() => setObjectSelected("")}
+            >
+              <ModelOutline
+                objectSelected={objectSelected}
+                currentId={"parlante3d"}
+              />
+            </mesh>
           </group>
         </group>
         <group name="barbablanca">
@@ -2595,7 +2605,11 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           </group>
         </group>
         <group name="pizarra">
-          <group name="a4847b1ba2d94c319197fa7e7f89b3e4objcleanermaterialmergergle">
+          <group
+            name="a4847b1ba2d94c319197fa7e7f89b3e4objcleanermaterialmergergle"
+            onPointerOver={() => setObjectSelected("contornoPizarra")}
+            onPointerOut={() => setObjectSelected("")}
+          >
             <mesh
               name="Object_2012"
               castShadow
@@ -2604,12 +2618,17 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
               material={materials["Material.020"]}
             />
             <mesh
-              name="Object_3005"
+              name="contornoPizarra"
               castShadow
               receiveShadow
               geometry={nodes.Object_3005.geometry}
               material={materials["Material.021"]}
-            />
+            >
+              <ModelOutline
+                objectSelected={objectSelected}
+                currentId={"contornoPizarra"}
+              />
+            </mesh>
           </group>
         </group>
         <group name="libreta">
@@ -3149,7 +3168,12 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             rotation={[-Math.PI / 2, 0, -Math.PI]}
             scale={0.01}
           >
-            <group name="RootNode001" rotation={[Math.PI, 0, Math.PI]}>
+            <group
+              name="RootNode001"
+              rotation={[Math.PI, 0, Math.PI]}
+              onPointerOver={() => setObjectSelected("monitor")}
+              onPointerOut={() => setObjectSelected("")}
+            >
               <group
                 name="PC_Monitor"
                 rotation={[-Math.PI / 2, 0, -Math.PI]}
@@ -3162,7 +3186,12 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   geometry={nodes.PC_Monitor_Monitor_1_0.geometry}
                   material={materials.Monitor_1}
                   rotation={[0, 0, -Math.PI]}
-                />
+                >
+                  <ModelOutline
+                    objectSelected={objectSelected}
+                    currentId={"monitor"}
+                  />
+                </mesh>
                 <mesh
                   name="PC_Monitor_Monitor_screen_0"
                   castShadow
