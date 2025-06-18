@@ -23,13 +23,13 @@ export const Camera = () => {
     if (!cameraRef.current) return;
 
     // puedo cambiar el valor de maxOffset para aumentar o disminuir la sensibilidad
-    const maxOffset = 0.01;
+    const maxOffset = 0.03;
 
-    const targetX = initialRotation.current.x - mouse.current.y * maxOffset;
+    // const targetX = initialRotation.current.x - mouse.current.y * maxOffset;
     const targetY = initialRotation.current.y + mouse.current.x * maxOffset;
 
-    cameraRef.current.rotation.x +=
-      (targetX - cameraRef.current.rotation.x) * 0.05;
+    // cameraRef.current.rotation.x +=
+    //   (targetX - cameraRef.current.rotation.x) * 0.05;
     cameraRef.current.rotation.y +=
       (targetY - cameraRef.current.rotation.y) * 0.05;
   });
