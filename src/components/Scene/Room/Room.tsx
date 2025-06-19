@@ -1,10 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import { useGLTF, useAnimations, Outlines } from "@react-three/drei";
+import {
+  useGLTF,
+  useAnimations,
+  Outlines,
+  PerspectiveCamera,
+} from "@react-three/drei";
 import { SpotLight } from "three";
 import { useFrame } from "@react-three/fiber";
 import { MeshstandardMaterial } from "three";
 import { ModelOutline } from "./ModelOutline/ModelOutline";
 import { useContextAction } from "../../../hooks/useContextAction";
+import { ScreenModel } from "./ScreenModel/ScreenModel";
+import { Camera } from "../Camera/Camera";
 
 interface Props {
   lightLampRef: React.RefObject<SpotLight | null>;
@@ -16,7 +23,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
   const [objectSelected, setObjectSelected] = useState<string>("");
 
   const group = useRef(null);
-  const { nodes, materials, animations } = useGLTF(
+  const { nodes, materials, animations, cameras } = useGLTF(
     "/model/cuartoPortfolio.glb"
   );
   const { actions } = useAnimations(animations, group);
@@ -36,6 +43,8 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
 
   return (
     <group ref={group} {...props} dispose={null}>
+      <Camera />
+
       <group name="Scene">
         <group name="zoro">
           <group name="root001">
@@ -3165,53 +3174,13 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           rotation={[-Math.PI / 2, 0, -Math.PI]}
           scale={[0.057, 0.057, 0.053]}
         />
-        <group
-          name="monitor"
-          position={[-7.919, 6.153, 13.282]}
-          rotation={[-Math.PI / 2, 0, -Math.PI]}
-          scale={6.295}
-        >
-          <group
-            name="e2759b92a838405e8167c182f17d0afcfbx"
-            rotation={[-Math.PI / 2, 0, -Math.PI]}
-            scale={0.01}
-          >
-            <group
-              name="RootNode001"
-              rotation={[Math.PI, 0, Math.PI]}
-              onPointerOver={() => setObjectSelected("monitor")}
-              onPointerOut={() => setObjectSelected("")}
-            >
-              <group
-                name="PC_Monitor"
-                rotation={[-Math.PI / 2, 0, -Math.PI]}
-                scale={100}
-              >
-                <mesh
-                  name="PC_Monitor_Monitor_1_0"
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.PC_Monitor_Monitor_1_0.geometry}
-                  material={materials.Monitor_1}
-                  rotation={[0, 0, -Math.PI]}
-                >
-                  <ModelOutline
-                    objectSelected={objectSelected}
-                    currentId={"monitor"}
-                  />
-                </mesh>
-                <mesh
-                  name="PC_Monitor_Monitor_screen_0"
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.PC_Monitor_Monitor_screen_0.geometry}
-                  material={materials.Monitor_screen}
-                  rotation={[0, 0, -Math.PI]}
-                />
-              </group>
-            </group>
-          </group>
-        </group>
+        <ScreenModel
+          actions={actions}
+          nodes={nodes}
+          materials={materials}
+          setObjectSelected={setObjectSelected}
+          objectSelected={objectSelected}
+        />
         <group
           name="luna"
           position={[-97.755, 36.37, 99.563]}

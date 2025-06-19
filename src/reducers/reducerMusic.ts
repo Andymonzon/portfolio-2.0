@@ -22,7 +22,6 @@ export const musicReducer = (
         onePiece.volume = 0.03;
         onePiece.loop = true;
         onePiece.play();
-        console.log("Playing music");
         return { ...state, isPlaying: true };
       }
       return state;
@@ -31,7 +30,6 @@ export const musicReducer = (
       if (state.isPlaying) {
         onePiece.pause();
         onePiece.currentTime = 0;
-        console.log("Stopping music");
         return { ...state, isPlaying: false };
       }
       return state;
