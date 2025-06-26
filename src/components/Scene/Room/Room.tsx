@@ -1,10 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import {
-  useGLTF,
-  useAnimations,
-  Outlines,
-  PerspectiveCamera,
-} from "@react-three/drei";
+import { useGLTF, useAnimations } from "@react-three/drei";
 import { SpotLight } from "three";
 import { useFrame } from "@react-three/fiber";
 import { MeshstandardMaterial } from "three";
@@ -12,6 +7,8 @@ import { ModelOutline } from "./ModelOutline/ModelOutline";
 import { useContextAction } from "../../../hooks/useContextAction";
 import { ScreenModel } from "./ScreenModel/ScreenModel";
 import { Camera } from "../Camera/Camera";
+import { SpeakerModel } from "./SpeakerModel/SpeakerModel";
+import { ChalkboardModel } from "./ChalkboardModel/ChalkboardModel";
 
 interface Props {
   lightLampRef: React.RefObject<SpotLight | null>;
@@ -24,7 +21,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
 
   const group = useRef(null);
   const { nodes, materials, animations, cameras } = useGLTF(
-    "/model/cuartoPortfolio.glb"
+    "/model/cuartoPortfolio1.glb"
   );
   const { actions } = useAnimations(animations, group);
 
@@ -32,10 +29,12 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
 
   useFrame(() => {
     actions["mob_huevoAction"]?.play();
+    actions["LAVAMESH_rampShader1_0Action"]?.play();
   });
 
   useEffect(() => {
     if (lampRef.current && lightLampRef.current) {
+      console.log("Adding light to lampRef");
       lampRef.current.add(lightLampRef.current);
       lampRef.current.add(lightLampRef.current.target);
     }
@@ -2310,29 +2309,13 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
-        <group name="parlante">
-          <group name="29b256d4dadd4d4f9ba3b983510f3b85objcleanermaterialmergergle">
-            <mesh
-              name="parlante3d"
-              onClick={(e) => {
-                e.stopPropagation();
-                refGlobalMusic.current = true;
-                dispatchIsPlaying({ type: "STOP" });
-              }}
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_2002.geometry}
-              material={materials.None}
-              onPointerOver={() => setObjectSelected("parlante3d")}
-              onPointerOut={() => setObjectSelected("")}
-            >
-              <ModelOutline
-                objectSelected={objectSelected}
-                currentId={"parlante3d"}
-              />
-            </mesh>
-          </group>
-        </group>
+        <SpeakerModel
+          nodes={nodes}
+          materials={materials}
+          actions={actions}
+          setObjectSelected={setObjectSelected}
+          objectSelected={objectSelected}
+        />
         <group name="barbablanca">
           <group name="One_Piece_-_WhiteBeardobjcleanermaterialmergergles">
             <mesh
@@ -2405,7 +2388,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
-
         <group name="gabinete">
           <group name="root006">
             <group name="GLTF_SceneRootNode006">
@@ -2435,7 +2417,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
-
         <group name="cafe" position={[-1.04, 0, 0]}>
           <group name="root007">
             <group name="GLTF_SceneRootNode007">
@@ -2484,6 +2465,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
               <group name="Plane002">
                 <mesh
                   name="Plane002_Material064_0"
+                  castShadow
                   receiveShadow
                   geometry={nodes.Plane002_Material064_0.geometry}
                   material={materials["Material.064"]}
@@ -2533,52 +2515,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           geometry={nodes.maceta_planta.geometry}
           material={materials.Plant_Albedo}
         />
-        <group name="mueble">
-          <group name="tableobjcleanermaterialmergergles">
-            <mesh
-              name="Object_2011"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_2011.geometry}
-              material={materials.blinn1SG}
-            />
-            <mesh
-              name="Object_3004"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_3004.geometry}
-              material={materials.blinn2SG}
-            />
-            <mesh
-              name="Object_4013"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_4013.geometry}
-              material={materials.blinn3SG}
-            />
-            <mesh
-              name="Object_5005"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_5005.geometry}
-              material={materials.blinn3SG}
-            />
-            <mesh
-              name="Object_6005"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_6005.geometry}
-              material={materials.blinn3SG}
-            />
-            <mesh
-              name="Object_7002"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_7002.geometry}
-              material={materials.initialShadingGroup}
-            />
-          </group>
-        </group>
         <group name="basquet">
           <group name="Root">
             <group name="Basketball">
@@ -2621,33 +2557,13 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
-        <group name="pizarra">
-          <group
-            name="a4847b1ba2d94c319197fa7e7f89b3e4objcleanermaterialmergergle"
-            onPointerOver={() => setObjectSelected("contornoPizarra")}
-            onPointerOut={() => setObjectSelected("")}
-          >
-            <mesh
-              name="Object_2012"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_2012.geometry}
-              material={materials["Material.020"]}
-            />
-            <mesh
-              name="contornoPizarra"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_3005.geometry}
-              material={materials["Material.021"]}
-            >
-              <ModelOutline
-                objectSelected={objectSelected}
-                currentId={"contornoPizarra"}
-              />
-            </mesh>
-          </group>
-        </group>
+        <ChalkboardModel
+          nodes={nodes}
+          materials={materials}
+          setObjectSelected={setObjectSelected}
+          objectSelected={objectSelected}
+          actions={actions}
+        />
         <group name="libreta">
           <group name="Notebookobjcleanermaterialmergergles">
             <mesh
@@ -2696,7 +2612,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             />
           </group>
         </group>
-
         <group name="lampara">
           <group name="root003">
             <group name="GLTF_SceneRootNode003">
@@ -2827,6 +2742,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Plane001_Material043_0001.geometry}
                   material={materials["Material.043"]}
+                  scale={[1, 1, 1.008]}
                 />
               </group>
               <group name="Plane005">
@@ -2836,12 +2752,13 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Plane002_Material064_0001.geometry}
                   material={materials["Material.064"]}
+                  scale={[1, 1, 1.009]}
                 />
               </group>
             </group>
           </group>
         </group>
-        <group name="cortinas2">
+        <group name="cortinas2" position={[0, 0, 0.124]} scale={[1, 1, 1.039]}>
           <group name="92759427104f44428466de85dc4144a1fbx001">
             <group name="RootNode011">
               <group name="Plane007">
@@ -3335,47 +3252,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           </group>
         </group>
         <group
-          name="reigenmob100"
-          position={[2.784, 3.636, 12.596]}
-          rotation={[-1.573, -0.032, 3.08]}
-          scale={0.476}
-        >
-          <group
-            name="f27c8b6ece9b4253888a6b4fcebc9c44fbx"
-            rotation={[Math.PI / 2, 0, 0]}
-            scale={0.01}
-          >
-            <group name="RootNode014">
-              <group
-                name="Armature"
-                rotation={[-Math.PI / 2, 0, 0]}
-                scale={100}
-              >
-                <group name="Object_4014">
-                  <group
-                    name="Object_157001"
-                    rotation={[-Math.PI / 2, 0, 0]}
-                    scale={100}
-                  />
-                  <skinnedMesh
-                    name="Object_158"
-                    geometry={nodes.Object_158.geometry}
-                    material={materials.N00_000_00_Body_00_SKIN_Instance}
-                    skeleton={nodes.Object_158.skeleton}
-                  />
-                  <skinnedMesh
-                    name="Object_159001"
-                    geometry={nodes.Object_159001.geometry}
-                    material={materials.N00_000_00_FaceMouth_00_FACE_Instance}
-                    skeleton={nodes.Object_159001.skeleton}
-                  />
-                  <primitive object={nodes._rootJoint} />
-                </group>
-              </group>
-            </group>
-          </group>
-        </group>
-        <group
           name="saitama"
           position={[4.827, 3.663, 12.376]}
           rotation={[-Math.PI / 2, 0, 3.136]}
@@ -3462,6 +3338,156 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
+        <group name="Dog1" rotation={[0, 0.477, 0]} />
+        <group name="Dog2" rotation={[0, 0.477, 0]} />
+        <group
+          name="funkotangiro"
+          position={[2.738, 4.012, 12.741]}
+          rotation={[-Math.PI / 2, 0, 0.785]}
+          scale={0.151}
+        >
+          <group name="root010" rotation={[0, 0, 0.531]}>
+            <group
+              name="GLTF_SceneRootNode010"
+              rotation={[Math.PI / 2, 0.531, 0]}
+            >
+              <group name="Plane_0" rotation={[Math.PI / 2, 0, -0.531]}>
+                <mesh
+                  name="Object_10001"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_10001.geometry}
+                  material={materials["Material.040"]}
+                  rotation={[0, 0, -0.531]}
+                />
+                <mesh
+                  name="Object_11001"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_11001.geometry}
+                  material={materials["Material.041"]}
+                  rotation={[0, 0, -0.531]}
+                />
+                <mesh
+                  name="Object_12002"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_12002.geometry}
+                  material={materials["Material.044"]}
+                  rotation={[0, 0, -0.531]}
+                />
+                <mesh
+                  name="Object_4014"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_4014.geometry}
+                  material={materials["Material.022"]}
+                  rotation={[0, 0, -0.531]}
+                />
+                <mesh
+                  name="Object_5008"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_5008.geometry}
+                  material={materials["Material.035"]}
+                  rotation={[0, 0, -0.531]}
+                />
+                <mesh
+                  name="Object_6006"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_6006.geometry}
+                  material={materials["Material.036"]}
+                  rotation={[0, 0, -0.531]}
+                />
+                <mesh
+                  name="Object_7004"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_7004.geometry}
+                  material={materials["Material.037"]}
+                  rotation={[0, 0, -0.531]}
+                />
+                <mesh
+                  name="Object_8004"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_8004.geometry}
+                  material={materials["Material.038"]}
+                  rotation={[0, 0, -0.531]}
+                />
+                <mesh
+                  name="Object_9001"
+                  castShadow
+                  receiveShadow
+                  geometry={nodes.Object_9001.geometry}
+                  material={materials["Material.039"]}
+                  rotation={[0, 0, -0.531]}
+                />
+              </group>
+            </group>
+          </group>
+        </group>
+        <group
+          name="mueble"
+          position={[-21.072, 1.213, 5.991]}
+          rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
+          scale={[0.069, 0.061, 0.061]}
+        >
+          <group
+            name="tableobjcleanermaterialmergergles001"
+            rotation={[0, 0, -Math.PI / 2]}
+          >
+            <mesh
+              name="Object_2014"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_2014.geometry}
+              material={materials["blinn1SG.001"]}
+              rotation={[0, 0, -Math.PI / 2]}
+            />
+            <mesh
+              name="Object_3004"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_3004.geometry}
+              material={materials["blinn2SG.001"]}
+              rotation={[0, 0, -Math.PI / 2]}
+            />
+            <mesh
+              name="Object_4013"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_4013.geometry}
+              material={materials["blinn3SG.001"]}
+              rotation={[0, 0, -Math.PI / 2]}
+            />
+            <mesh
+              name="Object_5005"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_5005.geometry}
+              material={materials["blinn3SG.001"]}
+              rotation={[0, 0, -Math.PI / 2]}
+            />
+            <mesh
+              name="Object_6005"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_6005.geometry}
+              material={materials["blinn3SG.001"]}
+              rotation={[0, 0, -Math.PI / 2]}
+            />
+            <mesh
+              name="Object_7002"
+              castShadow
+              receiveShadow
+              geometry={nodes.Object_7002.geometry}
+              material={materials["initialShadingGroup.002"]}
+              rotation={[0, 0, -Math.PI / 2]}
+            />
+          </group>
+        </group>
         <mesh
           name="paredes"
           castShadow
@@ -3482,7 +3508,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           castShadow
           receiveShadow
           geometry={nodes.estanteria.geometry}
-          material={nodes.estanteria.material}
+          material={materials["Material.047"]}
         />
         <group name="lampara_lava">
           <group name="3af78b939e60426f97f1cd5a40c920a3fbx">
@@ -3520,7 +3546,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           castShadow
           receiveShadow
           geometry={nodes.mesa_de_luz.geometry}
-          material={nodes.mesa_de_luz.material}
+          material={materials["Material.046"]}
           position={[0, 0, -0.59]}
         />
         <group name="silla">
@@ -3754,4 +3780,4 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
   );
 };
 
-useGLTF.preload("/cuartoPortfolio.glb");
+useGLTF.preload("/model/cuartoPortfolio1.glb");

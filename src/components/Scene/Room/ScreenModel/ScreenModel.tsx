@@ -17,7 +17,7 @@ export const ScreenModel = ({
   actions,
 }: Props) => {
   const handleClick = () => {
-    const action = actions["camaraPantalla"];
+    const action = actions["camaraPantalla2"];
     if (action) {
       action.reset();
       action.setLoop(LoopOnce, 1);

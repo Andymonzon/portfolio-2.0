@@ -9,7 +9,7 @@ interface Props {
 export const Lights = ({ lightLampRef }: Props) => {
   return (
     <>
-      <Environment environmentIntensity={0.4} files={"/hdri/night.hdr"} />
+      <Environment environmentIntensity={0.5} files={"/hdri/night.hdr"} />
       <spotLight
         name="lampara001"
         ref={lightLampRef}
@@ -54,7 +54,7 @@ export const Lights = ({ lightLampRef }: Props) => {
         position={[3.599, 12.471, 5.73]}
         rotation={[-2.484, -0.015, 0.114]}
       />
-      <spotLight
+      {/* <spotLight
         name="Area001_1"
         intensity={0}
         angle={0.777}
@@ -65,17 +65,17 @@ export const Lights = ({ lightLampRef }: Props) => {
         rotation={[-1.872, 0.501, -0.904]}
       >
         <group position={[0, 0, -1]} />
-      </spotLight>
-      <pointLight
+      </spotLight> */}
+      {/* <pointLight
         name="Area002_1"
         intensity={0.5}
         decay={2}
         position={[-12.302, 3.091, 14.727]}
         rotation={[-Math.PI / 2, 0, 0]}
-      />
-      <pointLight
+      /> */}
+      {/* <pointLight
         name="Point001_1"
-        intensity={1000}
+        intensity={10000000}
         castShadow={true}
         shadow-mapSize-width={1024}
         shadow-mapSize-height={1024}
@@ -84,7 +84,7 @@ export const Lights = ({ lightLampRef }: Props) => {
         decay={2}
         position={[-23.6, 24.315, 29.456]}
         rotation={[-Math.PI / 2, 0, 0]}
-      />
+      /> */}
     </>
   );
 };
