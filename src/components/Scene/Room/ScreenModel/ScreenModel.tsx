@@ -1,6 +1,7 @@
 import { useContextAction } from "../../../../hooks/useContextAction";
 import { ModelOutline } from "../ModelOutline/ModelOutline";
 import { LoopOnce } from "three";
+import { Html } from "@react-three/drei";
 
 interface Props {
   nodes: any;
@@ -85,7 +86,11 @@ export const ScreenModel = ({
               geometry={nodes.PC_Monitor_Monitor_screen_0.geometry}
               material={materials.Monitor_screen}
               rotation={[0, 0, -Math.PI]}
-            />
+            >
+              <Html position={[0, 0, 0]}>
+                <div className="bg-red-500">hola</div>
+              </Html>
+            </mesh>
           </group>
         </group>
       </group>
