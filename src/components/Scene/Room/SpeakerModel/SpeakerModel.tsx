@@ -98,7 +98,8 @@ export const SpeakerModel = ({
             onPointerOver={() => setObjectSelectedHover("btnAtras")}
             onPointerOut={() => setObjectSelectedHover("")}
             onClick={() => {
-              console.log("musica anterior");
+              refGlobalMusic.current = true;
+              dispatchIsPlaying({ type: "BACK" });
             }}
           >
             <mesh
@@ -193,6 +194,8 @@ export const SpeakerModel = ({
             onPointerOut={() => setObjectSelectedHover("")}
             onClick={() => {
               console.log("musica siguiente");
+              refGlobalMusic.current = true;
+              dispatchIsPlaying({ type: "NEXT" });
             }}
           >
             <mesh
