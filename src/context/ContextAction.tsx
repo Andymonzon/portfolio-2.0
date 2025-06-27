@@ -14,14 +14,14 @@ import {
 
 type ContextActionType = {
   dispatchIsPlaying: Dispatch<MusicAction>;
-  refGlobalMusic: React.RefObject<boolean>;
+  refGlobalMusic: React.RefObject<boolean | null>;
   currentModelSelected: string;
   setCurrentModelSelected: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const ContextAction = createContext<ContextActionType>({
   dispatchIsPlaying: () => {},
-  refGlobalMusic: { current: false },
+  refGlobalMusic: { current: null },
   currentModelSelected: "",
   setCurrentModelSelected: () => {},
 });
@@ -33,7 +33,7 @@ interface Props {
 export const ContextActionProvider = ({ children }: Props) => {
   const [currentModelSelected, setCurrentModelSelected] = useState("");
   const [_, dispatchIsPlaying] = useReducer(musicReducer, initialMusicState);
-  const refGlobalMusic = useRef<boolean>(false);
+  const refGlobalMusic = useRef<boolean | null>(null);
 
   return (
     <ContextAction

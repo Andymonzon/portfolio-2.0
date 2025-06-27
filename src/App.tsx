@@ -7,12 +7,12 @@ function App() {
   return (
     <div
       onClick={(e) => {
-        if (refGlobalMusic.current) {
+        if (refGlobalMusic.current === null) {
           refGlobalMusic.current = false;
+          e.stopPropagation();
+          dispatchIsPlaying({ type: "PLAY" });
           return;
         }
-        e.stopPropagation();
-        dispatchIsPlaying({ type: "PLAY" });
       }}
       className="w-screen h-screen"
       style={{
