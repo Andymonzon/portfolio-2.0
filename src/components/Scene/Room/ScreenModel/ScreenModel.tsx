@@ -1,3 +1,4 @@
+import { useContextAction } from "../../../../hooks/useContextAction";
 import { ModelOutline } from "../ModelOutline/ModelOutline";
 import { LoopOnce } from "three";
 
@@ -5,18 +6,24 @@ interface Props {
   nodes: any;
   materials: any;
   actions: any;
-  setObjectSelected: (id: string) => void;
-  objectSelected: string | null;
+  setObjectSelectedHover: (id: string) => void;
+  objectSelectedHover: string | null;
 }
 
 export const ScreenModel = ({
   nodes,
   materials,
-  setObjectSelected,
-  objectSelected,
+  setObjectSelectedHover,
+  objectSelectedHover,
   actions,
 }: Props) => {
+  const { setCurrentModelSelected, currentModelSelected } = useContextAction();
+
   const handleClick = () => {
+    setObjectSelectedHover("");
+    if (currentModelSelected === "monitor") return;
+
+    setCurrentModelSelected("monitor");
     const action = actions["camaraPantalla2"];
     if (action) {
       action.reset();
@@ -24,6 +31,11 @@ export const ScreenModel = ({
       action.clampWhenFinished = true;
       action.play();
     }
+  };
+
+  const handlePointerOver = (id: string) => {
+    if (currentModelSelected === "monitor") return;
+    setObjectSelectedHover(id);
   };
 
   return (
@@ -45,8 +57,8 @@ export const ScreenModel = ({
         <group
           name="RootNode001"
           rotation={[Math.PI, 0, Math.PI]}
-          onPointerOver={() => setObjectSelected("monitor")}
-          onPointerOut={() => setObjectSelected("")}
+          onPointerOver={() => handlePointerOver("monitor")}
+          onPointerOut={() => handlePointerOver("")}
         >
           <group
             name="PC_Monitor"
@@ -62,7 +74,7 @@ export const ScreenModel = ({
               rotation={[0, 0, -Math.PI]}
             >
               <ModelOutline
-                objectSelected={objectSelected}
+                objectSelected={objectSelectedHover}
                 currentId={"monitor"}
               />
             </mesh>

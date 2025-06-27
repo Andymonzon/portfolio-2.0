@@ -1,3 +1,4 @@
+import { useContextAction } from "../../../../hooks/useContextAction";
 import { ModelOutline } from "../ModelOutline/ModelOutline";
 import { LoopOnce } from "three";
 
@@ -5,21 +6,26 @@ interface Props {
   nodes: any;
   materials: any;
   actions: any;
-  setObjectSelected: (id: string) => void;
-  objectSelected: string | null;
+  setObjectSelectedHover: (id: string) => void;
+  objectSelectedHover: string | null;
 }
 
 export const SpeakerModel = ({
   nodes,
   materials,
-  setObjectSelected,
-  objectSelected,
+  setObjectSelectedHover,
+  objectSelectedHover,
   actions,
 }: Props) => {
+  const { setCurrentModelSelected, currentModelSelected } = useContextAction();
+
   const handleClick = () => {
+    setObjectSelectedHover("");
+    if (currentModelSelected === "parlante001") return;
+
     const actionCamara = actions["camaraRadio"];
     const actionRadio = actions["animacionParlante"];
-
+    setCurrentModelSelected("parlante001");
     if (actionCamara) {
       actionCamara.reset();
       actionCamara.setLoop(LoopOnce, 1);
@@ -44,6 +50,11 @@ export const SpeakerModel = ({
     }
   };
 
+  const handlePointerOver = (id: string) => {
+    if (currentModelSelected === "parlante001") return;
+    setObjectSelectedHover(id);
+  };
+
   return (
     <group name="parlante">
       <group name="29b256d4dadd4d4f9ba3b983510f3b85objcleanermaterialmergergle">
@@ -59,11 +70,11 @@ export const SpeakerModel = ({
             e.stopPropagation();
             handleClick();
           }}
-          onPointerOver={() => setObjectSelected("parlante001")}
-          onPointerOut={() => setObjectSelected("")}
+          onPointerOver={() => handlePointerOver("parlante001")}
+          onPointerOut={() => handlePointerOver("")}
         >
           <ModelOutline
-            objectSelected={objectSelected}
+            objectSelected={objectSelectedHover}
             currentId={"parlante001"}
           />
           <group name="btnAtras">

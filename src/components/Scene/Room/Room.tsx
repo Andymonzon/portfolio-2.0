@@ -14,9 +14,9 @@ interface Props {
 }
 
 export const Room = ({ lightLampRef, ...props }: Props) => {
-  const { dispatchIsPlaying, refGlobalMusic } = useContextAction();
+  // const { dispatchIsPlaying, refGlobalMusic } = useContextAction();
 
-  const [objectSelected, setObjectSelected] = useState<string>("");
+  const [objectSelectedHover, setObjectSelectedHover] = useState<string>("");
 
   const group = useRef(null);
   const { nodes, materials, animations, cameras } = useGLTF(
@@ -2562,8 +2562,8 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           nodes={nodes}
           materials={materials}
           actions={actions}
-          setObjectSelected={setObjectSelected}
-          objectSelected={objectSelected}
+          setObjectSelectedHover={setObjectSelectedHover}
+          objectSelectedHover={objectSelectedHover}
         />
         <group name="caja">
           <group name="CardboardBox_LPfbx">
@@ -2755,8 +2755,8 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           nodes={nodes}
           materials={materials}
           actions={actions}
-          setObjectSelected={setObjectSelected}
-          objectSelected={objectSelected}
+          setObjectSelectedHover={setObjectSelectedHover}
+          objectSelectedHover={objectSelectedHover}
         />
         <group name="libreta">
           <group name="Notebookobjcleanermaterialmergergles">
@@ -3253,8 +3253,8 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           actions={actions}
           nodes={nodes}
           materials={materials}
-          setObjectSelected={setObjectSelected}
-          objectSelected={objectSelected}
+          setObjectSelectedHover={setObjectSelectedHover}
+          objectSelectedHover={objectSelectedHover}
         />
         <group
           name="luna"

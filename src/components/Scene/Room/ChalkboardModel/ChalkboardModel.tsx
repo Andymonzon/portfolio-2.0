@@ -1,3 +1,4 @@
+import { useContextAction } from "../../../../hooks/useContextAction";
 import { ModelOutline } from "../ModelOutline/ModelOutline";
 import { LoopOnce } from "three";
 
@@ -5,18 +6,23 @@ interface Props {
   nodes: any;
   materials: any;
   actions: any;
-  setObjectSelected: (id: string) => void;
-  objectSelected: string | null;
+  setObjectSelectedHover: (id: string) => void;
+  objectSelectedHover: string | null;
 }
 
 export const ChalkboardModel = ({
   nodes,
   materials,
-  setObjectSelected,
-  objectSelected,
+  setObjectSelectedHover,
+  objectSelectedHover,
   actions,
 }: Props) => {
+  const { setCurrentModelSelected, currentModelSelected } = useContextAction();
   const handleClick = () => {
+    setObjectSelectedHover("");
+    if (currentModelSelected === "contornoPizarra") return;
+
+    setCurrentModelSelected("contornoPizarra");
     const action = actions["camaraPizarra2"];
     if (action) {
       action.reset();
@@ -26,12 +32,17 @@ export const ChalkboardModel = ({
     }
   };
 
+  const handlePointerOver = (id: string) => {
+    if (currentModelSelected === "contornoPizarra") return;
+    setObjectSelectedHover(id);
+  };
+
   return (
     <group name="pizarra">
       <group
         name="a4847b1ba2d94c319197fa7e7f89b3e4objcleanermaterialmergergle"
-        onPointerOver={() => setObjectSelected("contornoPizarra")}
-        onPointerOut={() => setObjectSelected("")}
+        onPointerOver={() => handlePointerOver("contornoPizarra")}
+        onPointerOut={() => handlePointerOver("")}
         onClick={(e) => {
           e.stopPropagation();
           handleClick();
@@ -52,7 +63,7 @@ export const ChalkboardModel = ({
           material={materials["Material.021"]}
         >
           <ModelOutline
-            objectSelected={objectSelected}
+            objectSelected={objectSelectedHover}
             currentId={"contornoPizarra"}
           />
         </mesh>
