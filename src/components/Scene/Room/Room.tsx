@@ -3,7 +3,6 @@ import { useGLTF, useAnimations } from "@react-three/drei";
 import { SpotLight } from "three";
 import { useFrame } from "@react-three/fiber";
 import { MeshstandardMaterial } from "three";
-import { ModelOutline } from "./ModelOutline/ModelOutline";
 import { useContextAction } from "../../../hooks/useContextAction";
 import { ScreenModel } from "./ScreenModel/ScreenModel";
 import { Camera } from "../Camera/Camera";
@@ -21,7 +20,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
 
   const group = useRef(null);
   const { nodes, materials, animations, cameras } = useGLTF(
-    "/model/cuartoPortfolio1.glb"
+    "/model/cuartoPortfolio2.glb"
   );
   const { actions } = useAnimations(animations, group);
 
@@ -55,6 +54,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_491.geometry}
                   material={materials.Outline}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Arete1_240">
@@ -64,6 +64,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_485.geometry}
                   material={materials.Aretes}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Arete2_241">
@@ -73,6 +74,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_487.geometry}
                   material={materials.Aretes}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Arete3_242">
@@ -82,6 +84,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_489.geometry}
                   material={materials.Aretes}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Brazo_bot_left_17">
@@ -92,6 +95,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                     receiveShadow
                     geometry={nodes.Object_38.geometry}
                     material={materials.Outline}
+                    position={[1.595, 0, 0]}
                   />
                 </group>
                 <mesh
@@ -100,6 +104,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_36.geometry}
                   material={materials.Piel}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Brazo_bot_right_19">
@@ -110,6 +115,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                     receiveShadow
                     geometry={nodes.Object_42.geometry}
                     material={materials.Outline}
+                    position={[1.595, 0, 0]}
                   />
                 </group>
                 <mesh
@@ -118,6 +124,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_40.geometry}
                   material={materials.Piel}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Brazo_top_left_21">
@@ -128,6 +135,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                     receiveShadow
                     geometry={nodes.Object_46.geometry}
                     material={materials.Outline}
+                    position={[1.595, 0, 0]}
                   />
                 </group>
                 <mesh
@@ -136,6 +144,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_44.geometry}
                   material={materials.Piel}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Brazo_top_right_15">
@@ -146,6 +155,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                     receiveShadow
                     geometry={nodes.Object_34.geometry}
                     material={materials.Outline}
+                    position={[1.595, 0, 0]}
                   />
                 </group>
                 <mesh
@@ -154,6 +164,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_32.geometry}
                   material={materials.Piel}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Cabeza_O__11">
@@ -163,6 +174,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_26.geometry}
                   material={materials.Outline}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Cabeza_10">
@@ -172,6 +184,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_24.geometry}
                   material={materials.Piel_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Faja_4">
@@ -181,6 +194,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_12.geometry}
                   material={materials.Polera}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="FajaO__9">
@@ -190,6 +204,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_22.geometry}
                   material={materials.Outline_faja}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Hombros_13">
@@ -199,6 +214,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_30.geometry}
                   material={materials.Piel}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Hombtros_O_23">
@@ -208,6 +224,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_50.geometry}
                   material={materials.Outline}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Mano_left_O__3">
@@ -217,6 +234,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_10.geometry}
                   material={materials.Outline}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Mano_left_2">
@@ -226,6 +244,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_8.geometry}
                   material={materials.Piel}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Mano_right_1">
@@ -236,6 +255,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                     receiveShadow
                     geometry={nodes.Object_6.geometry}
                     material={materials.Outline}
+                    position={[1.595, 0, 0]}
                   />
                 </group>
                 <mesh
@@ -244,6 +264,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_4003.geometry}
                   material={materials.Piel}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Orejas_O__25">
@@ -253,6 +274,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_54.geometry}
                   material={materials.Outline}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Orejas_24">
@@ -262,6 +284,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_52.geometry}
                   material={materials.Piel}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Pantalones_O__7">
@@ -271,6 +294,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_18.geometry}
                   material={materials.Outline_pantalones}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Pantalones_5">
@@ -280,6 +304,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_14.geometry}
                   material={materials.Polera}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Patillas_26">
@@ -289,6 +314,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_56.geometry}
                   material={materials.Pelo}
+                  position={[1.595, 0, 0]}
                 />
                 <mesh
                   name="Object_57"
@@ -296,6 +322,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_57.geometry}
                   material={materials.Outline_pelo}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane002_28">
@@ -305,6 +332,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_61.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane003_223">
@@ -314,6 +342,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_451.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane004_224">
@@ -323,6 +352,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_453.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane005_29">
@@ -332,6 +362,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_63.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane006_30">
@@ -341,6 +372,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_65.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane007_225">
@@ -350,6 +382,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_455.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane008_226">
@@ -359,6 +392,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_457.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane009_227">
@@ -368,6 +402,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_459.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane010_31">
@@ -377,6 +412,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_67.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane011_32">
@@ -386,6 +422,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_69.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane012_33">
@@ -395,6 +432,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_71.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane013_34">
@@ -404,6 +442,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_73.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane014_228">
@@ -413,6 +452,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_461.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane015_35">
@@ -422,6 +462,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_75.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane016_229">
@@ -431,6 +472,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_463.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane017_230">
@@ -440,6 +482,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_465.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane018_231">
@@ -449,6 +492,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_467.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane019_232">
@@ -458,6 +502,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_469.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane020_233">
@@ -467,6 +512,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_471.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane021_234">
@@ -476,6 +522,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_473.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane022_235">
@@ -485,6 +532,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_475.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane023_36">
@@ -494,6 +542,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_77.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane024_37">
@@ -503,6 +552,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_79.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane025_38">
@@ -512,6 +562,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_81.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane026_39">
@@ -521,6 +572,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_83.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane027_40">
@@ -530,6 +582,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_85.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane028_41">
@@ -539,6 +592,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_87.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane029_42">
@@ -548,6 +602,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_89.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane030_43">
@@ -557,6 +612,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_91.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane031_44">
@@ -566,6 +622,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_93.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane032_45">
@@ -575,6 +632,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_95.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane033_46">
@@ -584,6 +642,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_97.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane034_47">
@@ -593,6 +652,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_99.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane035_48">
@@ -602,6 +662,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_101.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane036_49">
@@ -611,6 +672,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_103.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane037_50">
@@ -620,6 +682,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_105.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane038_51">
@@ -629,6 +692,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_107.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane039_52">
@@ -638,6 +702,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_109.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane040_236">
@@ -647,6 +712,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_477.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane041_53">
@@ -656,6 +722,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_111.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane042_237">
@@ -665,6 +732,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_479.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane043_238">
@@ -674,6 +742,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_481.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane045_239">
@@ -683,6 +752,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_483.geometry}
                   material={materials.Outline_pelo}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane059_54">
@@ -692,6 +762,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_113.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane060_55">
@@ -701,6 +772,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_115.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane061_56">
@@ -710,6 +782,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_117.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane063_57">
@@ -719,6 +792,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_119.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane064_58">
@@ -728,6 +802,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_121.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane068_59">
@@ -737,6 +812,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_123.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane069_60">
@@ -746,6 +822,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_125.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane085_61">
@@ -755,6 +832,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_127.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane086_62">
@@ -764,6 +842,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_129.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane091_63">
@@ -773,6 +852,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_131.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane092_64">
@@ -782,6 +862,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_133.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane093_65">
@@ -791,6 +872,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_135.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane094_66">
@@ -800,6 +882,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_137.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane095_67">
@@ -809,6 +892,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_139.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane096_68">
@@ -818,6 +902,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_141.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane097_69">
@@ -827,6 +912,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_143.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane098_70">
@@ -836,6 +922,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_145.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane099_71">
@@ -845,6 +932,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_147.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane100_72">
@@ -854,6 +942,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_149.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane101_73">
@@ -863,6 +952,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_151.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane102_74">
@@ -872,6 +962,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_153.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane103_75">
@@ -881,6 +972,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_155.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane104_76">
@@ -890,6 +982,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_157.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane105_77">
@@ -899,6 +992,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_159.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane106_78">
@@ -908,6 +1002,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_161.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane107_79">
@@ -917,6 +1012,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_163.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane108_80">
@@ -926,6 +1022,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_165.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane109_81">
@@ -935,6 +1032,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_167.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane110_82">
@@ -944,6 +1042,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_169.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane115_83">
@@ -953,6 +1052,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_171.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane123_84">
@@ -962,6 +1062,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_173.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane124_85">
@@ -971,6 +1072,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_175.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane125_86">
@@ -980,6 +1082,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_177.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane126_87">
@@ -989,6 +1092,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_179.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane127_88">
@@ -998,6 +1102,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_181.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane128_89">
@@ -1007,6 +1112,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_183.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane129_90">
@@ -1016,6 +1122,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_185.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane130_91">
@@ -1025,6 +1132,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_187.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane131_92">
@@ -1034,6 +1142,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_189.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane132_93">
@@ -1043,6 +1152,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_191.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane133_94">
@@ -1052,6 +1162,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_193.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane134_95">
@@ -1061,6 +1172,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_195.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane135_96">
@@ -1070,6 +1182,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_197.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane136_97">
@@ -1079,6 +1192,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_199.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane137_98">
@@ -1088,6 +1202,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_201.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane138_99">
@@ -1097,6 +1212,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_203.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane139_100">
@@ -1106,6 +1222,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_205.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane140_101">
@@ -1115,6 +1232,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_207.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane141_102">
@@ -1124,6 +1242,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_209.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane142_103">
@@ -1133,6 +1252,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_211.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane143_104">
@@ -1142,6 +1262,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_213.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane144_105">
@@ -1151,6 +1272,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_215.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane145_106">
@@ -1160,6 +1282,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_217.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane146_107">
@@ -1169,6 +1292,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_219.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane147_108">
@@ -1178,6 +1302,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_221.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane148_109">
@@ -1187,6 +1312,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_223.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane149_110">
@@ -1196,6 +1322,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_225.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane150_111">
@@ -1205,6 +1332,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_227.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane151_112">
@@ -1214,6 +1342,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_229.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane152_113">
@@ -1223,6 +1352,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_231.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane153_114">
@@ -1232,6 +1362,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_233.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane154_115">
@@ -1241,6 +1372,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_235.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane155_116">
@@ -1250,6 +1382,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_237.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane156_117">
@@ -1259,6 +1392,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_239.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane157_118">
@@ -1268,6 +1402,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_241.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane158_119">
@@ -1277,6 +1412,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_243.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane159_120">
@@ -1286,6 +1422,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_245.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane160_121">
@@ -1295,6 +1432,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_247.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane161_122">
@@ -1304,6 +1442,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_249.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane162_123">
@@ -1313,6 +1452,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_251.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane163_124">
@@ -1322,6 +1462,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_253.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane164_125">
@@ -1331,6 +1472,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_255.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane165_126">
@@ -1340,6 +1482,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_257.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane166_127">
@@ -1349,6 +1492,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_259.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane167_128">
@@ -1358,6 +1502,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_261.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane168_129">
@@ -1367,6 +1512,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_263.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane169_130">
@@ -1376,6 +1522,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_265.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane170_131">
@@ -1385,6 +1532,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_267.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane171_132">
@@ -1394,6 +1542,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_269.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane172_133">
@@ -1403,6 +1552,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_271.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane173_134">
@@ -1412,6 +1562,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_273.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane174_135">
@@ -1421,6 +1572,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_275.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane175_136">
@@ -1430,6 +1582,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_277.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane176_137">
@@ -1439,6 +1592,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_279.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane177_138">
@@ -1448,6 +1602,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_281.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane178_139">
@@ -1457,6 +1612,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_283.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane179_140">
@@ -1466,6 +1622,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_285.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane180_141">
@@ -1475,6 +1632,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_287.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane181_142">
@@ -1484,6 +1642,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_289.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane182_143">
@@ -1493,6 +1652,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_291.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane183_144">
@@ -1502,6 +1662,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_293.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane184_145">
@@ -1511,6 +1672,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_295.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane185_146">
@@ -1520,6 +1682,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_297.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane186_147">
@@ -1529,6 +1692,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_299.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane187_148">
@@ -1538,6 +1702,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_301.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane188_149">
@@ -1547,6 +1712,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_303.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane189_150">
@@ -1556,6 +1722,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_305.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane190_151">
@@ -1565,6 +1732,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_307.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane191_152">
@@ -1574,6 +1742,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_309.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane192_153">
@@ -1583,6 +1752,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_311.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane193_154">
@@ -1592,6 +1762,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_313.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane194_155">
@@ -1601,6 +1772,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_315.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane195_156">
@@ -1610,6 +1782,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_317.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane196_157">
@@ -1619,6 +1792,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_319.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane197_158">
@@ -1628,6 +1802,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_321.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane198_159">
@@ -1637,6 +1812,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_323.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane199_160">
@@ -1646,6 +1822,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_325.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane200_161">
@@ -1655,6 +1832,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_327.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane201_162">
@@ -1664,6 +1842,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_329.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane202_163">
@@ -1673,6 +1852,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_331.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane203_164">
@@ -1682,6 +1862,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_333.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane204_165">
@@ -1691,6 +1872,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_335.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane205_166">
@@ -1700,6 +1882,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_337.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane206_167">
@@ -1709,6 +1892,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_339.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane207_168">
@@ -1718,6 +1902,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_341.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane208_169">
@@ -1727,6 +1912,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_343.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane209_170">
@@ -1736,6 +1922,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_345.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane210_171">
@@ -1745,6 +1932,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_347.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane211_172">
@@ -1754,6 +1942,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_349.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane212_173">
@@ -1763,6 +1952,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_351.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane213_174">
@@ -1772,6 +1962,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_353.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane214_175">
@@ -1781,6 +1972,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_355.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane215_176">
@@ -1790,6 +1982,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_357.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane216_177">
@@ -1799,6 +1992,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_359.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane217_178">
@@ -1808,6 +2002,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_361.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane218_179">
@@ -1817,6 +2012,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_363.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane219_180">
@@ -1826,6 +2022,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_365.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane220_181">
@@ -1835,6 +2032,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_367.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane221_182">
@@ -1844,6 +2042,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_369.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane222_183">
@@ -1853,6 +2052,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_371.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane223_184">
@@ -1862,6 +2062,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_373.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane224_185">
@@ -1871,6 +2072,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_375.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane225_186">
@@ -1880,6 +2082,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_377.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane226_187">
@@ -1889,6 +2092,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_379.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane227_188">
@@ -1898,6 +2102,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_381.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane228_189">
@@ -1907,6 +2112,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_383.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane229_190">
@@ -1916,6 +2122,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_385.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane230_191">
@@ -1925,6 +2132,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_387.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane231_192">
@@ -1934,6 +2142,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_389.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane232_193">
@@ -1943,6 +2152,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_391.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane233_194">
@@ -1952,6 +2162,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_393.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane234_195">
@@ -1961,6 +2172,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_395.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane235_196">
@@ -1970,6 +2182,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_397.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane236_197">
@@ -1979,6 +2192,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_399.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane237_198">
@@ -1988,6 +2202,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_401.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane238_199">
@@ -1997,6 +2212,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_403.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane239_200">
@@ -2006,6 +2222,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_405.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane240_201">
@@ -2015,6 +2232,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_407.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane241_202">
@@ -2024,6 +2242,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_409.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane242_203">
@@ -2033,6 +2252,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_411.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane243_204">
@@ -2042,6 +2262,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_413.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane244_205">
@@ -2051,6 +2272,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_415.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane245_206">
@@ -2060,6 +2282,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_417.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane246_207">
@@ -2069,6 +2292,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_419.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane247_208">
@@ -2078,6 +2302,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_421.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane248_209">
@@ -2087,6 +2312,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_423.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane249_210">
@@ -2096,6 +2322,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_425.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane250_211">
@@ -2105,6 +2332,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_427.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane251_212">
@@ -2114,6 +2342,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_429.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane254_213">
@@ -2123,6 +2352,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_431.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane255_214">
@@ -2132,6 +2362,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_433.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane256_215">
@@ -2141,6 +2372,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_435.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane257_216">
@@ -2150,6 +2382,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_437.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane258_217">
@@ -2159,6 +2392,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_439.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane259_218">
@@ -2168,6 +2402,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_441.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane261_219">
@@ -2177,6 +2412,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_443.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane264_220">
@@ -2186,6 +2422,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_445.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane265_221">
@@ -2195,6 +2432,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_447.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane266_222">
@@ -2204,6 +2442,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_449.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Plane_27">
@@ -2213,6 +2452,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_59.geometry}
                   material={materials.Pelo_0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Polera_O__245">
@@ -2222,6 +2462,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_495.geometry}
                   material={materials.Outline}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Polera_244">
@@ -2231,6 +2472,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_493.geometry}
                   material={materials.Polera}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Torso_O__22">
@@ -2240,6 +2482,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_48.geometry}
                   material={materials.Outline}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Torso_12">
@@ -2249,6 +2492,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_28.geometry}
                   material={materials.Piel}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Zapatos_O__8">
@@ -2258,6 +2502,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_20.geometry}
                   material={materials.Outline_pantalones}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Zapatos_6">
@@ -2267,6 +2512,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_16.geometry}
                   material={materials.Zapatos}
+                  position={[1.595, 0, 0]}
                 />
               </group>
             </group>
@@ -2282,6 +2528,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_4006.geometry}
                   material={materials.material}
+                  position={[1.595, 0, 0]}
                 />
                 <mesh
                   name="Object_5002"
@@ -2289,6 +2536,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_5002.geometry}
                   material={materials.line}
+                  position={[1.595, 0, 0]}
                 />
               </group>
             </group>
@@ -2304,6 +2552,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Object_4007.geometry}
                   material={materials.default_tex0}
+                  position={[1.595, 0, 0]}
                 />
               </group>
             </group>
@@ -2316,24 +2565,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           setObjectSelected={setObjectSelected}
           objectSelected={objectSelected}
         />
-        <group name="barbablanca">
-          <group name="One_Piece_-_WhiteBeardobjcleanermaterialmergergles">
-            <mesh
-              name="Object_2009"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_2009.geometry}
-              material={materials["Material.012"]}
-            />
-            <mesh
-              name="Object_3001"
-              castShadow
-              receiveShadow
-              geometry={nodes.Object_3001.geometry}
-              material={materials["edward001_cloak_d.001"]}
-            />
-          </group>
-        </group>
         <group name="caja">
           <group name="CardboardBox_LPfbx">
             <group name="RootNode004">
@@ -2344,21 +2575,8 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.CardboardBox_LP_lambert1_0.geometry}
                   material={materials.lambert1}
-                />
-              </group>
-            </group>
-          </group>
-        </group>
-        <group name="mochila">
-          <group name="Bag_r_lowfbx">
-            <group name="RootNode005">
-              <group name="bag_r_low">
-                <mesh
-                  name="bag_r_low_main_bag_0"
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.bag_r_low_main_bag_0.geometry}
-                  material={materials.main_bag}
+                  position={[4.863, 2.048, 13.3]}
+                  scale={[0.615, 1, 1]}
                 />
               </group>
             </group>
@@ -2374,6 +2592,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Box001_Material005_0.geometry}
                   material={materials["Material.014"]}
+                  position={[1.595, 0, 0]}
                 />
               </group>
               <group name="Handle001">
@@ -2383,6 +2602,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Handle001_Material003_0.geometry}
                   material={materials["Material.015"]}
+                  position={[1.595, 0, 0]}
                 />
               </group>
             </group>
@@ -2417,6 +2637,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
+
         <group name="cafe" position={[-1.04, 0, 0]}>
           <group name="root007">
             <group name="GLTF_SceneRootNode007">
@@ -2450,7 +2671,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
-        <group name="ventana">
+        <group name="ventana" position={[0, -0.09668, 0]}>
           <group name="0c4c5861ad2a4757a4ba60ad556421ccfbx">
             <group name="RootNode007">
               <group name="Plane001">
@@ -2462,15 +2683,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   material={materials["Material.043"]}
                 />
               </group>
-              <group name="Plane002">
-                <mesh
-                  name="Plane002_Material064_0"
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.Plane002_Material064_0.geometry}
-                  material={materials["Material.064"]}
-                />
-              </group>
+
               <group name="Plane058">
                 <mesh
                   name="Plane058_Material042_0"
@@ -2483,7 +2696,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
-        <group name="tacho">
+        <group name="tacho" position={[2.015, 0, 0]}>
           <group name="Wireframe_Trash_Binobjcleanermaterialmergergles">
             <mesh
               name="Object_2"
@@ -2501,21 +2714,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             />
           </group>
         </group>
-        <mesh
-          name="maceta"
-          castShadow
-          receiveShadow
-          geometry={nodes.maceta.geometry}
-          material={materials.Pot_Albedo}
-        />
-        <mesh
-          name="maceta_planta"
-          castShadow
-          receiveShadow
-          geometry={nodes.maceta_planta.geometry}
-          material={materials.Plant_Albedo}
-        />
-        <group name="basquet">
+        <group name="basquet" position={[0, -0.094, -0.044]}>
           <group name="Root">
             <group name="Basketball">
               <mesh
@@ -2524,6 +2723,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                 receiveShadow
                 geometry={nodes.Basketball_0.geometry}
                 material={materials["Material.018"]}
+                position={[1.595, 0, 0]}
               />
               <mesh
                 name="Basketball_1"
@@ -2531,6 +2731,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                 receiveShadow
                 geometry={nodes.Basketball_1.geometry}
                 material={materials["Material.019"]}
+                position={[1.595, 0, 0]}
               />
             </group>
           </group>
@@ -2546,13 +2747,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   geometry={nodes.Cube_books_0.geometry}
                   material={materials.books}
                 />
-                <mesh
-                  name="Cube_books_0001"
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.Cube_books_0001.geometry}
-                  material={materials.books}
-                />
               </group>
             </group>
           </group>
@@ -2560,9 +2754,9 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
         <ChalkboardModel
           nodes={nodes}
           materials={materials}
+          actions={actions}
           setObjectSelected={setObjectSelected}
           objectSelected={objectSelected}
-          actions={actions}
         />
         <group name="libreta">
           <group name="Notebookobjcleanermaterialmergergles">
@@ -2612,6 +2806,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             />
           </group>
         </group>
+
         <group name="lampara">
           <group name="root003">
             <group name="GLTF_SceneRootNode003">
@@ -2652,9 +2847,9 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
               <group name="Sphere_4">
                 <mesh
                   name="foco"
+                  ref={lampRef}
                   castShadow
                   receiveShadow
-                  ref={lampRef}
                   geometry={nodes.foco.geometry}
                   material={materials["Material.031"]}
                   position={[-17.2, 7.9, 11.132]}
@@ -2745,16 +2940,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   scale={[1, 1, 1.008]}
                 />
               </group>
-              <group name="Plane005">
-                <mesh
-                  name="Plane002_Material064_0001"
-                  castShadow
-                  receiveShadow
-                  geometry={nodes.Plane002_Material064_0001.geometry}
-                  material={materials["Material.064"]}
-                  scale={[1, 1, 1.009]}
-                />
-              </group>
+              <group name="Plane005" />
             </group>
           </group>
         </group>
@@ -2813,6 +2999,8 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
                   receiveShadow
                   geometry={nodes.Plane_Tejido_0001.geometry}
                   material={materials.Tejido}
+                  position={[-22.768, 11.109, -7.977]}
+                  scale={[1, 1.513, 1]}
                 />
               </group>
             </group>
@@ -2824,39 +3012,9 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           receiveShadow
           geometry={nodes.papel.geometry}
           material={materials["Material.026"]}
-          position={[-22.505, 10.188, 8.793]}
-          rotation={[3.03, Math.PI / 2, 0]}
-          scale={[0.217, 0.202, 0.298]}
-        />
-        <mesh
-          name="papel001"
-          castShadow
-          receiveShadow
-          geometry={nodes.papel001.geometry}
-          material={materials["Material.033"]}
-          position={[-22.505, 9.983, 4.66]}
-          rotation={[3.041, 1.57, 0]}
-          scale={[0.2, 0.195, 0.26]}
-        />
-        <mesh
-          name="papel003"
-          castShadow
-          receiveShadow
-          geometry={nodes.papel003.geometry}
-          material={materials["Material.034"]}
-          position={[-22.505, 8.484, 3.64]}
-          rotation={[3.043, Math.PI / 2, 0]}
-          scale={[0.182, 0.169, 0.263]}
-        />
-        <mesh
-          name="papel004"
-          castShadow
-          receiveShadow
-          geometry={nodes.papel004.geometry}
-          material={materials["Material.032"]}
-          position={[-22.505, 8.224, 8.283]}
-          rotation={[3.03, Math.PI / 2, 0]}
-          scale={[0.199, 0.191, 0.298]}
+          position={[-22.505, 10.188, 8.766]}
+          rotation={[-0.034, -1.522, 1.494]}
+          scale={[0.159, 0.27, 0.336]}
         />
         <group
           name="Pin"
@@ -2929,7 +3087,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
         </group>
         <group
           name="Pin003"
-          position={[-22.483, 10.459, 4.658]}
+          position={[-22.483, 10.423, 4.658]}
           rotation={[0, 1.104, 0]}
           scale={0.028}
         >
@@ -2985,7 +3143,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
         />
         <group
           name="poster2"
-          position={[-0.976, 11.718, 14.943]}
+          position={[0.244, 11.718, 14.943]}
           rotation={[Math.PI / 2, 0, -Math.PI]}
           scale={[1.72, 1.673, 2.45]}
         >
@@ -3125,22 +3283,12 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           </group>
         </group>
         <mesh
-          name="papel002"
-          castShadow
-          receiveShadow
-          geometry={nodes.papel002.geometry}
-          material={materials["Material.025"]}
-          position={[-22.505, 9.679, 6.707]}
-          rotation={[3.041, Math.PI / 2, 0]}
-          scale={[0.208, 0.202, 0.298]}
-        />
-        <mesh
           name="papelNota1"
           castShadow
           receiveShadow
           geometry={nodes.papelNota1.geometry}
           material={materials["initialShadingGroup.001"]}
-          position={[-22.445, 9.774, 8.147]}
+          position={[-22.445, 9.774, 8.174]}
           rotation={[-Math.PI / 2, 1.485, -1.682]}
           scale={[0.093, 0.113, 0.167]}
         />
@@ -3170,7 +3318,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           receiveShadow
           geometry={nodes.papelNota4.geometry}
           material={materials["initialShadingGroup.001"]}
-          position={[-22.445, 10.359, 4]}
+          position={[-22.445, 10.295, 4]}
           rotation={[3.03, Math.PI / 2, 0]}
           scale={[0.093, 0.113, 0.167]}
         />
@@ -3253,7 +3401,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
         </group>
         <group
           name="saitama"
-          position={[4.827, 3.663, 12.376]}
+          position={[6.422, 3.663, 12.376]}
           rotation={[-Math.PI / 2, 0, 3.136]}
         >
           <group name="root009">
@@ -3278,7 +3426,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
         </group>
         <group
           name="mob_huevo"
-          position={[3.807, 3.772, 12.902]}
+          position={[5.447, 3.772, 12.902]}
           rotation={[-Math.PI / 2, 0, 1.017]}
           scale={0.554}
         >
@@ -3338,11 +3486,9 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
-        <group name="Dog1" rotation={[0, 0.477, 0]} />
-        <group name="Dog2" rotation={[0, 0.477, 0]} />
         <group
           name="funkotangiro"
-          position={[2.738, 4.012, 12.741]}
+          position={[4.333, 4.012, 12.741]}
           rotation={[-Math.PI / 2, 0, 0.785]}
           scale={0.151}
         >
@@ -3489,6 +3635,55 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           </group>
         </group>
         <mesh
+          name="papel2"
+          castShadow
+          receiveShadow
+          geometry={nodes.papel2.geometry}
+          material={materials["Material.048"]}
+          position={[-22.505, 9.674, 6.654]}
+          rotation={[-0.034, -1.522, 1.494]}
+          scale={[0.149, 0.282, 0.336]}
+        />
+        <mesh
+          name="papel002"
+          castShadow
+          receiveShadow
+          geometry={nodes.papel002.geometry}
+          material={materials["Material.049"]}
+          position={[-22.525, 8.22, 8.216]}
+          rotation={[-0.073, -1.546, 1.46]}
+          scale={[0.143, 0.27, 0.336]}
+        />
+        <mesh
+          name="papel004"
+          castShadow
+          receiveShadow
+          geometry={nodes.papel004.geometry}
+          material={materials["Material.050"]}
+          position={[-22.525, 9.967, 4.618]}
+          rotation={[-0.073, -1.546, 1.46]}
+          scale={[0.143, 0.27, 0.336]}
+        />
+        <mesh
+          name="papel001"
+          castShadow
+          receiveShadow
+          geometry={nodes.papel001.geometry}
+          material={materials["Material.051"]}
+          position={[-22.525, 8.475, 3.591]}
+          rotation={[-0.067, -1.546, 1.46]}
+          scale={[0.129, 0.247, 0.301]}
+        />
+        <mesh
+          name="Cube003"
+          castShadow
+          receiveShadow
+          geometry={nodes.Cube003.geometry}
+          material={materials["Material.052"]}
+          position={[5.469, 5.944, 13.58]}
+          scale={[1.824, 4.788, 1.374]}
+        />
+        <mesh
           name="paredes"
           castShadow
           receiveShadow
@@ -3501,14 +3696,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           receiveShadow
           geometry={nodes.techo_y_suelo.geometry}
           material={materials["Material.011"]}
-        />
-
-        <mesh
-          name="estanteria"
-          castShadow
-          receiveShadow
-          geometry={nodes.estanteria.geometry}
-          material={materials["Material.047"]}
         />
         <group name="lampara_lava">
           <group name="3af78b939e60426f97f1cd5a40c920a3fbx">
@@ -3705,70 +3892,6 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
           </group>
         </group>
         <mesh
-          name="Object_2001"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2001.geometry}
-          material={materials.Copertina}
-        >
-          <mesh
-            name="Object_3"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_3.geometry}
-            material={materials.Pagine_Centrali}
-          />
-          <mesh
-            name="Object_4008"
-            castShadow
-            receiveShadow
-            geometry={nodes.Object_4008.geometry}
-            material={materials.Pagine_Laterali}
-          />
-        </mesh>
-        <mesh
-          name="Object_2003"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2003.geometry}
-          material={materials.Copertina}
-        />
-        <mesh
-          name="Object_2004"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2004.geometry}
-          material={materials.Copertina}
-        />
-        <mesh
-          name="Object_2005"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2005.geometry}
-          material={materials.Copertina}
-        />
-        <mesh
-          name="Object_2006"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2006.geometry}
-          material={materials.Copertina}
-        />
-        <mesh
-          name="Object_2007"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2007.geometry}
-          material={materials.Copertina}
-        />
-        <mesh
-          name="Object_2008"
-          castShadow
-          receiveShadow
-          geometry={nodes.Object_2008.geometry}
-          material={materials.Copertina}
-        />
-        <mesh
           name="Cube"
           castShadow
           receiveShadow
@@ -3780,4 +3903,4 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
   );
 };
 
-useGLTF.preload("/model/cuartoPortfolio1.glb");
+useGLTF.preload("/model/cuartoPortfolio2.glb");

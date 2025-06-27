@@ -49,16 +49,16 @@ export const SpeakerModel = ({
       <group name="29b256d4dadd4d4f9ba3b983510f3b85objcleanermaterialmergergle">
         <mesh
           name="parlante001"
-          onClick={(e) => {
-            e.stopPropagation();
-            handleClick();
-          }}
           castShadow
           receiveShadow
           geometry={nodes.parlante001.geometry}
           material={materials.None}
-          position={[3.864, 9.109, 13.176]}
+          position={[5.552, 9.109, 13.176]}
           rotation={[-2.732, 0, -Math.PI]}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleClick();
+          }}
           onPointerOver={() => setObjectSelected("parlante001")}
           onPointerOut={() => setObjectSelected("")}
         >
