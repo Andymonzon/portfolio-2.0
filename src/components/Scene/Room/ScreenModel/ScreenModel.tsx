@@ -2,6 +2,8 @@ import { useContextAction } from "../../../../hooks/useContextAction";
 import { ModelOutline } from "../ModelOutline/ModelOutline";
 import { LoopOnce } from "three";
 import { Html } from "@react-three/drei";
+import { Taskbar } from "./Taskbar/Taskbar";
+import { Desktop } from "./Desktop/Desktop";
 
 interface Props {
   nodes: any;
@@ -42,37 +44,24 @@ export const ScreenModel = ({
   return (
     <group
       name="monitor"
-      position={[-7.919, 6.153, 13.282]}
-      rotation={[-Math.PI / 2, 0, -Math.PI]}
-      scale={6.295}
       onClick={(e) => {
         e.stopPropagation();
         handleClick();
       }}
     >
-      <group
-        name="e2759b92a838405e8167c182f17d0afcfbx"
-        rotation={[-Math.PI / 2, 0, -Math.PI]}
-        scale={0.01}
-      >
+      <group name="e2759b92a838405e8167c182f17d0afcfbx">
         <group
           name="RootNode001"
-          rotation={[Math.PI, 0, Math.PI]}
           onPointerOver={() => handlePointerOver("monitor")}
           onPointerOut={() => handlePointerOver("")}
         >
-          <group
-            name="PC_Monitor"
-            rotation={[-Math.PI / 2, 0, -Math.PI]}
-            scale={100}
-          >
+          <group name="PC_Monitor">
             <mesh
               name="PC_Monitor_Monitor_1_0"
               castShadow
               receiveShadow
               geometry={nodes.PC_Monitor_Monitor_1_0.geometry}
               material={materials.Monitor_1}
-              rotation={[0, 0, -Math.PI]}
             >
               <ModelOutline
                 objectSelected={objectSelectedHover}
@@ -83,12 +72,21 @@ export const ScreenModel = ({
               name="PC_Monitor_Monitor_screen_0"
               castShadow
               receiveShadow
-              geometry={nodes.PC_Monitor_Monitor_screen_0.geometry}
-              material={materials.Monitor_screen}
-              rotation={[0, 0, -Math.PI]}
+              // geometry={nodes.PC_Monitor_Monitor_screen_0.geometry}
             >
-              <Html position={[0, 0, 0]}>
-                <div className="bg-red-500">hola</div>
+              <Html
+                center
+                transform
+                occlude
+                rotation={[0, Math.PI / 0.2, 0]}
+                position={[-7.919, 7.98, 13.423]}
+                distanceFactor={1.5}
+                pointerEvents="none"
+              >
+                <div className="w-[1080px] h-[620px] flex items-center justify-center flex-col text-white">
+                  <Desktop />
+                  <Taskbar />
+                </div>
               </Html>
             </mesh>
           </group>
