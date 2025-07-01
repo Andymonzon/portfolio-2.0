@@ -1,9 +1,7 @@
 import { useContextAction } from "../../../../hooks/useContextAction";
 import { ModelOutline } from "../ModelOutline/ModelOutline";
 import { LoopOnce } from "three";
-import { Html } from "@react-three/drei";
-import { Taskbar } from "./Taskbar/Taskbar";
-import { Desktop } from "./Desktop/Desktop";
+import { ScreenHtml } from "./ScreenHtml/ScreenHtml";
 
 interface Props {
   nodes: any;
@@ -74,23 +72,7 @@ export const ScreenModel = ({
               receiveShadow
               // geometry={nodes.PC_Monitor_Monitor_screen_0.geometry}
             >
-              <Html
-                center
-                transform
-                occlude
-                rotation={[0, Math.PI / 0.2, 0]}
-                position={[-7.919, 7.98, 13.423]}
-                distanceFactor={1.5}
-                pointerEvents={
-                  currentModelSelected === "monitor" ? "auto" : "none"
-                }
-                className="box-border"
-              >
-                <div className="w-[1080px] h-[620px] flex items-center  flex-col text-white ">
-                  <Desktop />
-                  <Taskbar />
-                </div>
-              </Html>
+              <ScreenHtml currentModelSelected={currentModelSelected} />
             </mesh>
           </group>
         </group>

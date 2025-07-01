@@ -174,29 +174,30 @@ export const LinkedinPage = () => {
               </div>
             </section>
 
-            <section className="flex flex-col bg-[#1b1f23] rounded-xl p-5">
+            <section className="flex flex-col bg-[#1b1f23] rounded-xl p-5 gap-3">
               <h2 className="font-semibold text-xl">Acerca de</h2>
-              <p>
-                👋 Hola, soy Andrés. Soy desarrollador web enfocado en Frontend,
-                con conocimientos de Backend.
-              </p>
-              <p>
-                Me apasiona crear interfaces modernas, visualmente atractivas e
-                interactivas que brinden experiencias de usuario de calidad.
-              </p>
-
-              <p>
-                💻 Trabajo con tecnologías como: React, Next.js, Redux,
-                JavaScript, TypeScript, Node.js, Express, HTML, CSS, Tailwind
-                CSS, Blender, React Three Fiber y GSAP.
-              </p>
-              <p>
-                Siempre busco aprender nuevas herramientas y perfeccionar mi
-                forma de desarrollar productos que generen impacto y valor.
-              </p>
+              <div className="text-base flex flex-col gap-2">
+                <p>
+                  👋 Hola, soy Andrés. Soy desarrollador web enfocado en
+                  Frontend, con conocimientos de Backend.
+                </p>
+                <p>
+                  Me apasiona crear interfaces modernas, visualmente atractivas
+                  e interactivas que brinden experiencias de usuario de calidad.
+                </p>
+                <p>
+                  💻 Trabajo con tecnologías como: React, Next.js, Redux,
+                  JavaScript, TypeScript, Node.js, Express, HTML, CSS, Tailwind
+                  CSS, Blender, React Three Fiber y GSAP.
+                </p>
+                <p>
+                  Siempre busco aprender nuevas herramientas y perfeccionar mi
+                  forma de desarrollar productos que generen impacto y valor.
+                </p>
+              </div>
             </section>
           </main>
-          <aside className="w-1/4 bg-[#1b1f23]  rounded-sm"></aside>
+          <aside className="w-1/4 bg-[#1b1f23] rounded-xl"></aside>
         </div>
       </div>
     </div>

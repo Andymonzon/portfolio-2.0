@@ -5,7 +5,19 @@ import BraveLogo from "/screen/braveLogo.png";
 import VsCodeLogo from "/screen/vscodeLogo.png";
 import TerminalLogo from "/screen/windowsTerminal.png";
 
-export const Taskbar = () => {
+interface Props {
+  setIsMinimized: (value: {
+    type: "minimized" | "close" | "";
+    value: boolean;
+  }) => void;
+  isMinimized: { type: "minimized" | "close" | ""; value: boolean };
+}
+
+export const Taskbar = ({ setIsMinimized, isMinimized }: Props) => {
+  const handleMaximize = () => {
+    setIsMinimized({ type: "", value: false });
+  };
+
   return (
     <div className="w-full h-[40px] flex rounded-b-sm items-center justify-between bg-neutral-800 px-3 py-5">
       <div className="flex flex-grow basis-0"></div>
@@ -27,7 +39,10 @@ export const Taskbar = () => {
         <div className="flex items-center p-2">
           <img src={CarpetaIcono} alt="carpeta" width={25} height={25} />
         </div>
-        <div className="flex items-center p-2">
+        <div
+          className="flex items-center p-2 cursor-pointer"
+          onClick={handleMaximize}
+        >
           <img src={BraveLogo} alt="brave" width={25} height={25} />
         </div>
         <div className="flex items-center p-2">
