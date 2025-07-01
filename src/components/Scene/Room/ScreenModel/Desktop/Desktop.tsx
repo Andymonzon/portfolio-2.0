@@ -1,16 +1,22 @@
 import { useState } from "react";
 import { Browser } from "../Browser/Browser";
+import type { AppNames, AppState } from "../ScreenHtml/ScreenHtml";
 
 interface Props {
   setIsMinimized: React.Dispatch<
-    React.SetStateAction<{ type: "minimized" | "close" | ""; value: boolean }>
+    React.SetStateAction<Record<AppNames, AppState>>
   >;
-  isMinimized: { type: "minimized" | "close" | ""; value: boolean };
+  isMinimized: Record<AppNames, AppState>;
 }
 
 export const Desktop = ({ setIsMinimized, isMinimized }: Props) => {
   const handleMinimize = (type: "minimized" | "close") => {
-    setIsMinimized({ type, value: true });
+    setIsMinimized((prevState) => {
+      return {
+        ...prevState,
+        brave: { type, value: true },
+      };
+    });
   };
 
   return (
@@ -24,7 +30,9 @@ export const Desktop = ({ setIsMinimized, isMinimized }: Props) => {
         backgroundAttachment: "fixed",
       }}
     >
-      {isMinimized.value ? null : <Browser handleMinimize={handleMinimize} />}
+      {isMinimized.brave.value ? null : (
+        <Browser handleMinimize={handleMinimize} />
+      )}
     </div>
   );
 };

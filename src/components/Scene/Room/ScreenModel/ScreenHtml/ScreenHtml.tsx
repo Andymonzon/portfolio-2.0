@@ -6,14 +6,18 @@ import { useState } from "react";
 interface Props {
   currentModelSelected: string;
 }
+
+export interface AppState {
+  type: "minimized" | "close" | "";
+  value: boolean;
+}
+
+export type AppNames = "brave" | "vscode";
+
 export const ScreenHtml = ({ currentModelSelected }: Props) => {
-  // TODO: cambiar esto para que acepte a todas las apps
-  const [isMinimized, setIsMinimized] = useState<{
-    type: "minimized" | "close" | "";
-    value: boolean;
-  }>({
-    type: "minimized",
-    value: true,
+  const [isMinimized, setIsMinimized] = useState<Record<AppNames, AppState>>({
+    brave: { type: "minimized", value: true },
+    vscode: { type: "minimized", value: true },
   });
 
   return (

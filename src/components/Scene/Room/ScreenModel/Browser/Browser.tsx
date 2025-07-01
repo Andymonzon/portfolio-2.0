@@ -12,7 +12,7 @@ interface Props {
 
 export const Browser = ({ handleMinimize }: Props) => {
   return (
-    <div className="w-full flex flex-col absolute top-0 left-0 h-[512px]">
+    <div className="w-full flex flex-col absolute top-0 left-0 h-[507px]">
       <div className="h-full">
         {/* barra de navegacion */}
         <div className="bg-[#1f1f23] flex items-center justify-between rounded-t-sm">
