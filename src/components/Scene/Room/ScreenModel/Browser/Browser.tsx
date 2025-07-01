@@ -8,10 +8,10 @@ import { LinkedinPage } from "./LinkedinPage/LinkedinPage";
 
 export const Browser = () => {
   return (
-    <div className="w-full h-full flex flex-col">
-      {/* barra de navegacion */}
-      <div className="">
-        <div className="bg-[#1f1f23] flex items-center justify-between box-border">
+    <div className="w-full flex flex-col absolute top-0 left-0 h-[512px]">
+      <div className="h-full">
+        {/* barra de navegacion */}
+        <div className="bg-[#1f1f23] flex items-center justify-between rounded-t-sm">
           {/* pestañas */}
           <div className="flex items-center gap-1 p-1">
             <Tab
@@ -38,9 +38,7 @@ export const Browser = () => {
           </div>
         </div>
         <div className=" bg-[#3b3b3f] h-8"></div>
-      </div>
-      {/* contenido */}
-      <div className="bg-[#1f1f1f] flex-grow overflow-auto">
+        {/* contenido */}
         <LinkedinPage />
       </div>
     </div>

@@ -81,9 +81,12 @@ export const ScreenModel = ({
                 rotation={[0, Math.PI / 0.2, 0]}
                 position={[-7.919, 7.98, 13.423]}
                 distanceFactor={1.5}
-                pointerEvents="none"
+                pointerEvents={
+                  currentModelSelected === "monitor" ? "auto" : "none"
+                }
+                className="box-border"
               >
-                <div className="w-[1080px] h-[620px] flex items-center justify-center flex-col text-white">
+                <div className="w-[1080px] h-[620px] flex items-center  flex-col text-white ">
                   <Desktop />
                   <Taskbar />
                 </div>

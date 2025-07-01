@@ -7,7 +7,7 @@ import TerminalLogo from "/screen/windowsTerminal.png";
 
 export const Taskbar = () => {
   return (
-    <div className="w-full h-[30px] flex rounded-b-sm items-center justify-between bg-neutral-800 px-3 py-5">
+    <div className="w-full h-[40px] flex rounded-b-sm items-center justify-between bg-neutral-800 px-3 py-5">
       <div className="flex flex-grow basis-0"></div>
       <div className="flex items-center justify-center ">
         <div className="flex items-center p-2">
