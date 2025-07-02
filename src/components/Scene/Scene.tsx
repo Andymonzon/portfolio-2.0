@@ -4,7 +4,11 @@ import { Lights } from "./Lights/Lights";
 import { Room } from "./Room/Room";
 import { useRef } from "react";
 import { SpotLight } from "three";
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import {
+  Bloom,
+  BrightnessContrast,
+  EffectComposer,
+} from "@react-three/postprocessing";
 import { Rain } from "./Rain/Rain";
 
 export const Scene = () => {
@@ -16,14 +20,10 @@ export const Scene = () => {
       <Rain />
       <Stars radius={450} />
       <Room lightLampRef={lightLampRef} />
-      {/* <EffectComposer>
-        <Bloom
-          mipmapBlur
-          blendFunction={BlendFunction}
-          luminanceThreshold={0.1}
-          luminanceSmoothing={0.1}
-        />
-      </EffectComposer> */}
+      <EffectComposer>
+        <Bloom mipmapBlur luminanceThreshold={0.1} luminanceSmoothing={0.1} />
+        <BrightnessContrast contrast={0.2} />
+      </EffectComposer>
     </Canvas>
   );
 };

@@ -1,12 +1,32 @@
 import { Environment } from "@react-three/drei";
-import type { Ref } from "react";
+import { useEffect, type Ref } from "react";
 import { SpotLight } from "three";
+import gsap from "gsap";
 
 interface Props {
   lightLampRef: Ref<SpotLight | null>;
 }
 
 export const Lights = ({ lightLampRef }: Props) => {
+  // animacion de la lampara, REVISAR
+  useEffect(() => {
+    if (!lightLampRef || !("current" in lightLampRef) || !lightLampRef.current)
+      return;
+
+    const lamp = lightLampRef.current;
+
+    const tl = gsap.timeline({ repeat: -1, repeatDelay: 5 });
+
+    tl.to(lamp, { intensity: 0, duration: 0.08, ease: "power2.inOut" })
+      .to(lamp, { intensity: 100, duration: 0.08, ease: "power2.inOut" })
+      .to(lamp, { intensity: 0, duration: 0.08, ease: "power2.inOut" })
+      .to(lamp, { intensity: 100, duration: 0.08, ease: "power2.inOut" });
+
+    return () => {
+      tl.kill();
+    };
+  }, [lightLampRef]);
+
   return (
     <>
       <Environment environmentIntensity={0.5} files={"/hdri/night.hdr"} />

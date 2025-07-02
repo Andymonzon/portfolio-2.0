@@ -12,17 +12,30 @@ const config = {
 };
 export const Rain = () => {
   return (
-    <Instances
-      limit={config.TOTAL}
-      range={config.TOTAL}
-      position={[-15, 0, 45]}
-    >
-      <boxGeometry args={[0.01, 1, 0.01]} />
-      <meshBasicMaterial />
-      {[...new Array(config.TOTAL)].map((_, idx) => (
-        <RainDrop key={idx} />
-      ))}
-    </Instances>
+    <>
+      <Instances
+        limit={config.TOTAL}
+        range={config.TOTAL}
+        position={[-15, 0, 45]}
+      >
+        <boxGeometry args={[0.01, 1, 0.01]} />
+        <meshBasicMaterial />
+        {[...new Array(config.TOTAL)].map((_, idx) => (
+          <RainDrop key={idx} />
+        ))}
+      </Instances>
+      <Instances
+        limit={config.TOTAL}
+        range={config.TOTAL}
+        position={[-50, 0, 0]}
+      >
+        <boxGeometry args={[0.01, 1, 0.01]} />
+        <meshBasicMaterial />
+        {[...new Array(config.TOTAL)].map((_, idx) => (
+          <RainDrop key={idx} />
+        ))}
+      </Instances>
+    </>
   );
 };
 
