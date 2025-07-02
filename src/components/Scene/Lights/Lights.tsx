@@ -1,7 +1,7 @@
 import { Environment } from "@react-three/drei";
-import { useEffect, type Ref } from "react";
+import { type Ref } from "react";
 import { SpotLight } from "three";
-import gsap from "gsap";
+// import gsap from "gsap";
 
 interface Props {
   lightLampRef: Ref<SpotLight | null>;
@@ -9,23 +9,23 @@ interface Props {
 
 export const Lights = ({ lightLampRef }: Props) => {
   // animacion de la lampara, REVISAR
-  useEffect(() => {
-    if (!lightLampRef || !("current" in lightLampRef) || !lightLampRef.current)
-      return;
+  // useEffect(() => {
+  //   if (!lightLampRef || !("current" in lightLampRef) || !lightLampRef.current)
+  //     return;
 
-    const lamp = lightLampRef.current;
+  //   const lamp = lightLampRef.current;
 
-    const tl = gsap.timeline({ repeat: -1, repeatDelay: 5 });
+  //   const tl = gsap.timeline({ repeat: -1, repeatDelay: 5 });
 
-    tl.to(lamp, { intensity: 0, duration: 0.08, ease: "power2.inOut" })
-      .to(lamp, { intensity: 100, duration: 0.08, ease: "power2.inOut" })
-      .to(lamp, { intensity: 0, duration: 0.08, ease: "power2.inOut" })
-      .to(lamp, { intensity: 100, duration: 0.08, ease: "power2.inOut" });
+  //   tl.to(lamp, { intensity: 0, duration: 0.03, ease: "power2.inOut" })
+  //     .to(lamp, { intensity: 100, duration: 0.03, ease: "power2.inOut" })
+  //     .to(lamp, { intensity: 0, duration: 0.03, ease: "power2.inOut" })
+  //     .to(lamp, { intensity: 100, duration: 0.03, ease: "power2.inOut" });
 
-    return () => {
-      tl.kill();
-    };
-  }, [lightLampRef]);
+  //   return () => {
+  //     tl.kill();
+  //   };
+  // }, [lightLampRef]);
 
   return (
     <>
