@@ -20,7 +20,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
 
   const group = useRef(null);
   const { nodes, materials, animations, cameras } = useGLTF(
-    "/model/cuartoPortfolio2.glb"
+    "/model/cuartoPortfolio1.glb"
   );
   const { actions } = useAnimations(animations, group);
 
@@ -41,8 +41,8 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      <Camera />
-
+      {/* <Camera /> */}
+      <OrbitControls />
       <group name="Scene">
         <group name="zoro">
           <group name="root001">

@@ -68,12 +68,12 @@ export const SpeakerModel = ({
   return (
     <group name="parlante">
       <group name="29b256d4dadd4d4f9ba3b983510f3b85objcleanermaterialmergergle">
-        <mesh
+        <group
           name="parlante001"
           castShadow
           receiveShadow
-          geometry={nodes.parlante001.geometry}
-          material={materials.None}
+          // geometry={nodes.parlante001.geometry}
+          // material={materials.None}
           position={[5.552, 9.109, 13.176]}
           rotation={[-2.732, 0, -Math.PI]}
           onClick={(e) => {
@@ -89,10 +89,26 @@ export const SpeakerModel = ({
             setHovered(false);
           }}
         >
-          <ModelOutline
-            objectSelected={objectSelectedHover}
-            currentId={"parlante001"}
+          <mesh
+            name="Object_0036"
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_0036.geometry}
+            material={materials.None}
+          >
+            <ModelOutline
+              objectSelected={objectSelectedHover}
+              currentId={"parlante001"}
+            />
+          </mesh>
+          <mesh
+            name="Object_0036_1"
+            castShadow
+            receiveShadow
+            geometry={nodes.Object_0036_1.geometry}
+            material={materials["Material.012"]}
           />
+
           <group
             name="btnAtras"
             onPointerOver={() => setObjectSelectedHover("btnAtras")}
@@ -220,7 +236,7 @@ export const SpeakerModel = ({
               material={materials["Material.045"]}
             ></mesh>
           </group>
-        </mesh>
+        </group>
       </group>
     </group>
   );
