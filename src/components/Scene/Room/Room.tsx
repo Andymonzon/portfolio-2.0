@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { useGLTF, useAnimations, OrbitControls } from "@react-three/drei";
+import { useGLTF, useAnimations } from "@react-three/drei";
 import { SpotLight } from "three";
 import { useFrame } from "@react-three/fiber";
 import { MeshstandardMaterial } from "three";
-import { useContextAction } from "../../../hooks/useContextAction";
 import { ScreenModel } from "./ScreenModel/ScreenModel";
 import { Camera } from "../Camera/Camera";
 import { SpeakerModel } from "./SpeakerModel/SpeakerModel";
@@ -14,8 +13,6 @@ interface Props {
 }
 
 export const Room = ({ lightLampRef, ...props }: Props) => {
-  // const { dispatchIsPlaying, refGlobalMusic } = useContextAction();
-
   const [objectSelectedHover, setObjectSelectedHover] = useState<string>("");
 
   const group = useRef(null);
@@ -41,8 +38,8 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
 
   return (
     <group ref={group} {...props} dispose={null}>
-      {/* <Camera /> */}
-      <OrbitControls />
+      <Camera />
+
       <group name="Scene">
         <group name="zoro">
           <group name="root001">
