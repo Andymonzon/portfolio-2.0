@@ -2,6 +2,7 @@ import { useContextAction } from "../../../../hooks/useContextAction";
 import { ModelOutline } from "../ModelOutline/ModelOutline";
 import { LoopOnce } from "three";
 import { ScreenHtml } from "./ScreenHtml/ScreenHtml";
+import { useState } from "react";
 
 interface Props {
   nodes: any;
@@ -19,6 +20,7 @@ export const ScreenModel = ({
   actions,
 }: Props) => {
   const { setCurrentModelSelected, currentModelSelected } = useContextAction();
+  const [isAnimationEnd, setIsAnimationEnd] = useState(false);
 
   const handleClick = () => {
     setObjectSelectedHover("");
@@ -31,6 +33,15 @@ export const ScreenModel = ({
       action.setLoop(LoopOnce, 1);
       action.clampWhenFinished = true;
       action.play();
+
+      const onFinished = (e: any) => {
+        if (e.action === action) {
+          setIsAnimationEnd(true);
+          action.getMixer().removeEventListener("finished", onFinished);
+        }
+      };
+
+      action.getMixer().addEventListener("finished", onFinished);
     }
   };
 
@@ -72,7 +83,7 @@ export const ScreenModel = ({
               receiveShadow
               // geometry={nodes.PC_Monitor_Monitor_screen_0.geometry}
             >
-              <ScreenHtml currentModelSelected={currentModelSelected} />
+              <ScreenHtml isAnimationEnd={isAnimationEnd} />
             </mesh>
           </group>
         </group>

@@ -4,7 +4,7 @@ import { Taskbar } from "../Taskbar/Taskbar";
 import { useState } from "react";
 
 interface Props {
-  currentModelSelected: string;
+  isAnimationEnd: boolean;
 }
 
 export interface AppState {
@@ -14,7 +14,7 @@ export interface AppState {
 
 export type AppNames = "brave" | "vscode";
 
-export const ScreenHtml = ({ currentModelSelected }: Props) => {
+export const ScreenHtml = ({ isAnimationEnd }: Props) => {
   const [isMinimized, setIsMinimized] = useState<Record<AppNames, AppState>>({
     brave: { type: "minimized", value: true },
     vscode: { type: "minimized", value: true },
@@ -24,11 +24,12 @@ export const ScreenHtml = ({ currentModelSelected }: Props) => {
     <Html
       center
       transform
-      occlude
+      occlude="blending"
       rotation={[0, Math.PI / 0.2, 0]}
       position={[-7.919, 7.98, 13.423]}
       distanceFactor={1.5}
-      pointerEvents={currentModelSelected === "monitor" ? "auto" : "none"}
+      zIndexRange={isAnimationEnd ? [1000000000, 0] : [10, 0]}
+      pointerEvents={isAnimationEnd ? "auto" : "none"}
       className="box-border"
     >
       <div className="w-[1080px] h-[620px] flex items-center  flex-col text-white ">

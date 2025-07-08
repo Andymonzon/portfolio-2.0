@@ -5,6 +5,7 @@ import { MaximizeIcon } from "../Icons/MaximizeIcon/MaximizeIcon";
 import { MinimizeIcon } from "../Icons/MinimizeIcon/MinimizeIcon";
 import { CloseIcon } from "../Icons/CloseIcon/CloseIcon";
 import { LinkedinPage } from "./LinkedinPage/LinkedinPage";
+import { GithubPage } from "./GithubPage/GithubPage";
 
 interface Props {
   handleMinimize: (type: "minimized" | "close") => void;
@@ -49,7 +50,8 @@ export const Browser = ({ handleMinimize }: Props) => {
         </div>
         <div className=" bg-[#3b3b3f] h-8"></div>
         {/* contenido */}
-        <LinkedinPage />
+        {/* <LinkedinPage /> */}
+        <GithubPage />
       </div>
     </div>
   );
