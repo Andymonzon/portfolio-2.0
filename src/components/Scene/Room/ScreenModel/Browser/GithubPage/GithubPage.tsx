@@ -24,6 +24,7 @@ import { LocationIcon } from "../../Icons/LocationIcon/LocationIcon";
 import { UrlIcon } from "../../Icons/UrlIcon/UrlIcon";
 import { LinkedinGithubIcon } from "../../Icons/LinkedinGithubIcon/LinkedinGithubIcon";
 import { GitHubCalendarComponent } from "./GithubCalendarComponent/GithubCalendarComponent";
+import { GithubTabs } from "./GithubTabs/GithubTabs";
 
 interface Props {
   selectedTab: "linkedin" | "github";
@@ -32,6 +33,11 @@ interface Props {
 export const GithubPage = ({ selectedTab }: Props) => {
   const [repos, setRepos] = useState<PinnedRepo[] | null>(null);
   const [info, setInfo] = useState<GithubProfile | null>(null);
+  const [activeTabG, setActiveTabG] = useState<{
+    overview: boolean;
+    repositories: boolean;
+  }>({ overview: true, repositories: false });
+
   useEffect(() => {
     const fetchRepos = async () => {
       const { data } = await githubFetchPinned();
@@ -118,27 +124,26 @@ export const GithubPage = ({ selectedTab }: Props) => {
             </a>
           </div>
         </section>
-        <section className="w-full py-3 flex gap-4">
-          <button className="flex gap-1 text-xs items-center">
-            <BookIcon />
-            <span>Overview</span>
-          </button>
-          <button className="flex gap-1 text-xs items-center">
-            <RepositoriesIcon />
-            <span>Repositories</span>
-          </button>
-          <button className="flex gap-1 text-xs items-center">
-            <ProjectIcons />
-            <span>Projects</span>
-          </button>
-          <button className="flex gap-1 text-xs items-center">
-            <PackageIcon />
-            <span>Packages</span>
-          </button>
-          <button className="flex gap-1 text-xs items-center">
-            <StarIcon />
-            <span>Stars</span>
-          </button>
+        <section className="w-full flex gap-4 py-3 ">
+          <GithubTabs
+            icon={<BookIcon />}
+            title="Overview"
+            active={activeTabG.overview}
+            onClick={() =>
+              setActiveTabG({ overview: true, repositories: false })
+            }
+          />
+          <GithubTabs
+            icon={<RepositoriesIcon />}
+            title="Repositories"
+            active={activeTabG.repositories}
+            onClick={() =>
+              setActiveTabG({ overview: false, repositories: true })
+            }
+          />
+          <GithubTabs icon={<ProjectIcons />} title="Projects" />
+          <GithubTabs icon={<PackageIcon />} title="Packages" />
+          <GithubTabs icon={<StarIcon />} title="Stars" />
         </section>
       </header>
       <main className="bg-[#0d1117] h-full px-10">
