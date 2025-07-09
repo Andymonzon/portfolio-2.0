@@ -25,7 +25,11 @@ import { UrlIcon } from "../../Icons/UrlIcon/UrlIcon";
 import { LinkedinGithubIcon } from "../../Icons/LinkedinGithubIcon/LinkedinGithubIcon";
 import { GitHubCalendarComponent } from "./GithubCalendarComponent/GithubCalendarComponent";
 
-export const GithubPage = () => {
+interface Props {
+  selectedTab: "linkedin" | "github";
+}
+
+export const GithubPage = ({ selectedTab }: Props) => {
   const [repos, setRepos] = useState<PinnedRepo[] | null>(null);
   const [info, setInfo] = useState<GithubProfile | null>(null);
   useEffect(() => {
@@ -45,7 +49,12 @@ export const GithubPage = () => {
   }, []);
 
   return (
-    <div className="flex flex-col box-border h-full overflow-auto">
+    <div
+      className="flex flex-col box-border h-full overflow-auto"
+      style={{
+        display: selectedTab === "github" ? "flex" : "none",
+      }}
+    >
       <header className="bg-[#010409] flex flex-col items-center px-4">
         <section className="flex items-center justify-between w-full py-3">
           <div className="flex items-center gap-2">

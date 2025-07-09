@@ -6,12 +6,15 @@ import { MinimizeIcon } from "../Icons/MinimizeIcon/MinimizeIcon";
 import { CloseIcon } from "../Icons/CloseIcon/CloseIcon";
 import { LinkedinPage } from "./LinkedinPage/LinkedinPage";
 import { GithubPage } from "./GithubPage/GithubPage";
+import { useState } from "react";
 
 interface Props {
   handleMinimize: (type: "minimized" | "close") => void;
 }
 
 export const Browser = ({ handleMinimize }: Props) => {
+  const [selectTab, setSelectTab] = useState<"linkedin" | "github">("linkedin");
+
   return (
     <div className="w-full flex flex-col absolute top-0 left-0 h-[507px]">
       <div className="h-full">
@@ -22,12 +25,16 @@ export const Browser = ({ handleMinimize }: Props) => {
             <Tab
               img={LinkedinLogo}
               title="Andrés Monzón | LinkedIn"
-              active={true}
+              active={selectTab === "linkedin"}
+              setSelectTab={setSelectTab}
+              id="linkedin"
             />
             <Tab
               img={GithubLogo}
               title="Andymonzon (Andrés Monzón)"
-              active={false}
+              active={selectTab === "github"}
+              setSelectTab={setSelectTab}
+              id="github"
             />
           </div>
           <div className="flex items-center">
@@ -50,8 +57,8 @@ export const Browser = ({ handleMinimize }: Props) => {
         </div>
         <div className=" bg-[#3b3b3f] h-8"></div>
         {/* contenido */}
-        {/* <LinkedinPage /> */}
-        <GithubPage />
+        <LinkedinPage selectedTab={selectTab} />
+        <GithubPage selectedTab={selectTab} />
       </div>
     </div>
   );

@@ -15,9 +15,18 @@ import Abstract from "/screen/browser/abstract_aleph_logo.jpg";
 import UTN from "/screen/browser/universidad_tecnologica_nacional_logo.jpg";
 import { UserPlus } from "../../Icons/UserPlus/UserPlus";
 
-export const LinkedinPage = () => {
+interface Props {
+  selectedTab: "linkedin" | "github";
+}
+
+export const LinkedinPage = ({ selectedTab }: Props) => {
   return (
-    <div className="flex flex-col box-border h-full overflow-auto">
+    <div
+      className="flex flex-col box-border h-full overflow-auto"
+      style={{
+        display: selectedTab === "linkedin" ? "flex" : "none",
+      }}
+    >
       <header className="flex items-center  bg-[#1b1f23] w-full px-10">
         <div className="mx-auto flex w-[900px] items-center">
           <a
