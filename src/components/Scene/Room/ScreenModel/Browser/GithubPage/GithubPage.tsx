@@ -23,6 +23,7 @@ import { FollowerIcon } from "../../Icons/FollowerIcon/FollowerIcon";
 import { LocationIcon } from "../../Icons/LocationIcon/LocationIcon";
 import { UrlIcon } from "../../Icons/UrlIcon/UrlIcon";
 import { LinkedinGithubIcon } from "../../Icons/LinkedinGithubIcon/LinkedinGithubIcon";
+import { GitHubCalendarComponent } from "./GithubCalendarComponent/GithubCalendarComponent";
 
 export const GithubPage = () => {
   const [repos, setRepos] = useState<PinnedRepo[] | null>(null);
@@ -188,7 +189,7 @@ export const GithubPage = () => {
               </div>
             </div>
           </aside>
-          <div className="w-full">
+          <div className="w-full flex flex-col gap-5">
             <div className="flex flex-col gap-2">
               <p>Pinned</p>
 
@@ -232,6 +233,9 @@ export const GithubPage = () => {
                     ))
                   : null}
               </div>
+            </div>
+            <div>
+              <GitHubCalendarComponent />
             </div>
           </div>
         </div>
