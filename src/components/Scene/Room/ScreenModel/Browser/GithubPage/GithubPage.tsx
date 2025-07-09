@@ -208,18 +208,20 @@ export const GithubPage = ({ selectedTab }: Props) => {
                   ? repos.map((repo) => (
                       <div
                         key={repo.name}
-                        className="border border-[#3d444d] rounded-md p-3 flex flex-col w-[45%] gap-2"
+                        className="border border-[#3d444d] rounded-md p-3 flex flex-col w-[49%] gap-2"
                       >
-                        <span className="flex gap-2 items-center">
-                          <RepositoriesIcon />
-                          <a
-                            href={repo.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-[#4493f8] text-sm"
-                          >
-                            {repo.name}
-                          </a>
+                        <span className="flex items-center justify-between w-full">
+                          <div className="flex items-center gap-2">
+                            <RepositoriesIcon />
+                            <a
+                              href={repo.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-[#4493f8] text-sm"
+                            >
+                              {repo.name}
+                            </a>
+                          </div>
                           <p className="text-xs border border-[#9198a1] text-[#9198a1] px-1.5 rounded-full">
                             Public
                           </p>
