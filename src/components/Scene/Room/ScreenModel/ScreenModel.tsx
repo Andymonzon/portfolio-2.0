@@ -2,7 +2,6 @@ import { useContextAction } from "../../../../hooks/useContextAction";
 import { ModelOutline } from "../ModelOutline/ModelOutline";
 import { LoopOnce } from "three";
 import { ScreenHtml } from "./ScreenHtml/ScreenHtml";
-import { useState } from "react";
 
 interface Props {
   nodes: any;
@@ -19,8 +18,12 @@ export const ScreenModel = ({
   objectSelectedHover,
   actions,
 }: Props) => {
-  const { setCurrentModelSelected, currentModelSelected } = useContextAction();
-  const [isAnimationEnd, setIsAnimationEnd] = useState(false);
+  const {
+    setCurrentModelSelected,
+    currentModelSelected,
+    refAction,
+    setIsAnimationEnd,
+  } = useContextAction();
 
   const handleClick = () => {
     setObjectSelectedHover("");
@@ -29,6 +32,7 @@ export const ScreenModel = ({
     setCurrentModelSelected("monitor");
     const action = actions["camaraPantalla2"];
     if (action) {
+      action.timeScale = 1;
       action.reset();
       action.setLoop(LoopOnce, 1);
       action.clampWhenFinished = true;
@@ -37,6 +41,7 @@ export const ScreenModel = ({
       const onFinished = (e: any) => {
         if (e.action === action) {
           setIsAnimationEnd(true);
+          refAction.current = action;
           action.getMixer().removeEventListener("finished", onFinished);
         }
       };
@@ -83,7 +88,7 @@ export const ScreenModel = ({
               receiveShadow
               // geometry={nodes.PC_Monitor_Monitor_screen_0.geometry}
             >
-              <ScreenHtml isAnimationEnd={isAnimationEnd} />
+              <ScreenHtml />
             </mesh>
           </group>
         </group>

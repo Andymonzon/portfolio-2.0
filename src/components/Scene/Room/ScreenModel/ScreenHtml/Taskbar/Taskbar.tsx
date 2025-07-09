@@ -4,7 +4,7 @@ import CarpetaIcono from "/screen/carpetaIcono.png";
 import BraveLogo from "/screen/braveLogo.png";
 import VsCodeLogo from "/screen/vscodeLogo.png";
 import TerminalLogo from "/screen/windowsTerminal.png";
-import type { AppNames, AppState } from "../ScreenHtml/ScreenHtml";
+import type { AppNames, AppState } from "../ScreenHtml";
 
 interface Props {
   setIsMinimized: React.Dispatch<

@@ -2,10 +2,7 @@ import { Html } from "@react-three/drei";
 import { Desktop } from "./Desktop/Desktop";
 import { useState } from "react";
 import { Taskbar } from "./Taskbar/Taskbar";
-
-interface Props {
-  isAnimationEnd: boolean;
-}
+import { useContextAction } from "../../../../../hooks/useContextAction";
 
 export interface AppState {
   type: "minimized" | "close" | "";
@@ -14,7 +11,8 @@ export interface AppState {
 
 export type AppNames = "brave" | "vscode";
 
-export const ScreenHtml = ({ isAnimationEnd }: Props) => {
+export const ScreenHtml = () => {
+  const { isAnimationEnd } = useContextAction();
   const [isMinimized, setIsMinimized] = useState<Record<AppNames, AppState>>({
     brave: { type: "minimized", value: true },
     vscode: { type: "minimized", value: true },
