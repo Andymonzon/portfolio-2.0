@@ -17,7 +17,7 @@ function App() {
       className="w-screen h-screen"
       style={{
         background:
-          "linear-gradient(359deg,rgba(89, 38, 201, 1) 0%, rgba(34, 14, 132, 1) 50%, rgba(8, 2, 52, 1) 100%)",
+          "linear-gradient(359deg,rgba(44, 33, 117, 1) 0%, rgba(29, 14, 89, 1) 50%, rgba(0, 0, 0, 1) 100%)",
       }}
     >
       <Scene />

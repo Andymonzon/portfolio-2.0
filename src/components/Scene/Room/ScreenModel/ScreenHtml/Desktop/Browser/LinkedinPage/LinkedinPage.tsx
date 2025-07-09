@@ -1,11 +1,11 @@
-import { ArrowDown } from "../../Icons/ArrowDown/ArrowDown";
-import { HomeIcon } from "../../Icons/HomeIcon/HomeIcon";
-import { LinkedinIcon } from "../../Icons/LinkedinIcon/LinkedinIcon";
-import { MessageIcon } from "../../Icons/MessageIcon/MessageIcon";
-import { NetworkIcon } from "../../Icons/NetworkIcon/NetworkIcon";
-import { NotificationIcon } from "../../Icons/NotificationIcon/NotificationIcon";
-import { SearchIcon } from "../../Icons/SearchIcon/SearchIcon";
-import { WorkIcon } from "../../Icons/WorkIcon/WorkIcon";
+import { ArrowDown } from "../../../../Icons/ArrowDown/ArrowDown";
+import { HomeIcon } from "../../../../Icons/HomeIcon/HomeIcon";
+import { LinkedinIcon } from "../../../../Icons/LinkedinIcon/LinkedinIcon";
+import { MessageIcon } from "../../../../Icons/MessageIcon/MessageIcon";
+import { NetworkIcon } from "../../../../Icons/NetworkIcon/NetworkIcon";
+import { NotificationIcon } from "../../../../Icons/NotificationIcon/NotificationIcon";
+import { SearchIcon } from "../../../../Icons/SearchIcon/SearchIcon";
+import { WorkIcon } from "../../../../Icons/WorkIcon/WorkIcon";
 
 import ImageProfileNav from "/screen/browser/profileNav.jpg";
 import BannerImage from "/screen/browser/banner.jpg";
@@ -13,7 +13,7 @@ import ProfileDefault from "/screen/browser/profileDefault.jpg";
 import OpenToWorkImg from "/screen/browser/openToWorkImage.png";
 import Abstract from "/screen/browser/abstract_aleph_logo.jpg";
 import UTN from "/screen/browser/universidad_tecnologica_nacional_logo.jpg";
-import { UserPlus } from "../../Icons/UserPlus/UserPlus";
+import { UserPlus } from "../../../../Icons/UserPlus/UserPlus";
 
 interface Props {
   selectedTab: "linkedin" | "github";

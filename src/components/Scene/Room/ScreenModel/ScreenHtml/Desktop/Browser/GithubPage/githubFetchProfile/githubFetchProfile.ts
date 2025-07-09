@@ -1,4 +1,4 @@
-import type { GithubProfile } from "../../../../../../../model/github.model";
+import type { GithubProfile } from "../../../../../../../../../model/github.model";
 
 const TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 

@@ -1,28 +1,28 @@
 import { useEffect, useState } from "react";
-import { ArrowDown } from "../../Icons/ArrowDown/ArrowDown";
-import { BookIcon } from "../../Icons/BookIcon/BookIcon";
-import { GithubCopilot } from "../../Icons/GithubCopilot/GithubCopilot";
-import { GithubLogo } from "../../Icons/GithubLogo/GithubLogo";
-import { GithubMenu } from "../../Icons/GithubMenu/GithubMenu";
-import { IssueIcon } from "../../Icons/IssueIcon/IssueIcon";
-import { NotificationGithubIcon } from "../../Icons/NotificationGithubIcon.tsx/NotificationGithubIcon";
-import { PackageIcon } from "../../Icons/PackageIcon/PackageIcon";
-import { Plus } from "../../Icons/Plus/Plus";
-import { ProjectIcons } from "../../Icons/ProjectsIcon/ProjectsIcon";
-import { PullRequestsIcon } from "../../Icons/PullRequestsIcon/PullRequestsIcon";
-import { RepositoriesIcon } from "../../Icons/RepositoriesIcon/RepositoriesIcon";
-import { SearchIcon } from "../../Icons/SearchIcon/SearchIcon";
-import { StarIcon } from "../../Icons/StarIcon/StarIcon";
+import { ArrowDown } from "../../../../Icons/ArrowDown/ArrowDown";
+import { BookIcon } from "../../../../Icons/BookIcon/BookIcon";
+import { GithubCopilot } from "../../../../Icons/GithubCopilot/GithubCopilot";
+import { GithubLogo } from "../../../../Icons/GithubLogo/GithubLogo";
+import { GithubMenu } from "../../../../Icons/GithubMenu/GithubMenu";
+import { IssueIcon } from "../../../../Icons/IssueIcon/IssueIcon";
+import { NotificationGithubIcon } from "../../../../Icons/NotificationGithubIcon.tsx/NotificationGithubIcon";
+import { PackageIcon } from "../../../../Icons/PackageIcon/PackageIcon";
+import { Plus } from "../../../../Icons/Plus/Plus";
+import { ProjectIcons } from "../../../../Icons/ProjectsIcon/ProjectsIcon";
+import { PullRequestsIcon } from "../../../../Icons/PullRequestsIcon/PullRequestsIcon";
+import { RepositoriesIcon } from "../../../../Icons/RepositoriesIcon/RepositoriesIcon";
+import { SearchIcon } from "../../../../Icons/SearchIcon/SearchIcon";
+import { StarIcon } from "../../../../Icons/StarIcon/StarIcon";
 import { githubFetchPinned } from "./githubFetchPinned/githubFetchPinned";
 import type {
   GithubProfile,
   PinnedRepo,
-} from "../../../../../../model/github.model";
+} from "../../../../../../../../model/github.model";
 import { githubFetchProfile } from "./githubFetchProfile/githubFetchProfile";
-import { FollowerIcon } from "../../Icons/FollowerIcon/FollowerIcon";
-import { LocationIcon } from "../../Icons/LocationIcon/LocationIcon";
-import { UrlIcon } from "../../Icons/UrlIcon/UrlIcon";
-import { LinkedinGithubIcon } from "../../Icons/LinkedinGithubIcon/LinkedinGithubIcon";
+import { FollowerIcon } from "../../../../Icons/FollowerIcon/FollowerIcon";
+import { LocationIcon } from "../../../../Icons/LocationIcon/LocationIcon";
+import { UrlIcon } from "../../../../Icons/UrlIcon/UrlIcon";
+import { LinkedinGithubIcon } from "../../../../Icons/LinkedinGithubIcon/LinkedinGithubIcon";
 import { GitHubCalendarComponent } from "./GithubCalendarComponent/GithubCalendarComponent";
 import { GithubTabs } from "./GithubTabs/GithubTabs";
 

@@ -1,7 +1,7 @@
 import { Html } from "@react-three/drei";
-import { Desktop } from "../Desktop/Desktop";
-import { Taskbar } from "../Taskbar/Taskbar";
+import { Desktop } from "./Desktop/Desktop";
 import { useState } from "react";
+import { Taskbar } from "./Taskbar/Taskbar";
 
 interface Props {
   isAnimationEnd: boolean;
@@ -24,7 +24,7 @@ export const ScreenHtml = ({ isAnimationEnd }: Props) => {
     <Html
       center
       transform
-      occlude="blending"
+      occlude={isAnimationEnd ? "raycast" : "blending"}
       rotation={[0, Math.PI / 0.2, 0]}
       position={[-7.919, 7.98, 13.423]}
       distanceFactor={1.5}
@@ -32,7 +32,7 @@ export const ScreenHtml = ({ isAnimationEnd }: Props) => {
       pointerEvents={isAnimationEnd ? "auto" : "none"}
       className="box-border"
     >
-      <div className="w-[1080px] h-[620px] flex items-center  flex-col text-white ">
+      <div className="w-[1080px] h-[620px] flex items-center  flex-col text-white">
         <Desktop setIsMinimized={setIsMinimized} isMinimized={isMinimized} />
         <Taskbar setIsMinimized={setIsMinimized} isMinimized={isMinimized} />
       </div>

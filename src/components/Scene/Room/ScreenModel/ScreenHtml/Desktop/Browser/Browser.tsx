@@ -1,9 +1,9 @@
 import { Tab } from "./Tab/Tab";
 import LinkedinLogo from "/screen/browser/linkedinLogo.png";
 import GithubLogo from "/screen/browser/githubLogo.png";
-import { MaximizeIcon } from "../Icons/MaximizeIcon/MaximizeIcon";
-import { MinimizeIcon } from "../Icons/MinimizeIcon/MinimizeIcon";
-import { CloseIcon } from "../Icons/CloseIcon/CloseIcon";
+import { MaximizeIcon } from "../../../Icons/MaximizeIcon/MaximizeIcon";
+import { MinimizeIcon } from "../../../Icons/MinimizeIcon/MinimizeIcon";
+import { CloseIcon } from "../../../Icons/CloseIcon/CloseIcon";
 import { LinkedinPage } from "./LinkedinPage/LinkedinPage";
 import { GithubPage } from "./GithubPage/GithubPage";
 import { useState } from "react";

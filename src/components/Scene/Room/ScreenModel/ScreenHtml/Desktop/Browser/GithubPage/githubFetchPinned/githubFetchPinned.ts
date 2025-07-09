@@ -1,4 +1,4 @@
-import type { PinnedRepo } from "../../../../../../../model/github.model";
+import type { PinnedRepo } from "../../../../../../../../../model/github.model";
 
 const TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 
