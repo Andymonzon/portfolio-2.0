@@ -1,39 +1,18 @@
 import { useContextAction } from "../../hooks/useContextAction";
 
 export const BtnBack = () => {
-  const {
-    currentModelSelected,
-    refAction,
-    setCurrentModelSelected,
-    setIsAnimationEnd,
-  } = useContextAction();
+  const { currentModelSelected, refAction } = useContextAction();
 
-  const handleBack = () => {
-    const action = refAction.current;
-    refAction.current = null;
-    setIsAnimationEnd(false);
-    if (!action) return;
-
-    action.paused = false;
-    action.timeScale = -1;
-    action.play();
-
-    action.time = action.getClip().duration;
-
-    const onFinished = (e: any) => {
-      if (e.action === action) {
-        setCurrentModelSelected("");
-        action.getMixer().removeEventListener("finished", onFinished);
-      }
-    };
-
-    action.getMixer().addEventListener("finished", onFinished);
+  const handleClick = () => {
+    if (refAction.current) {
+      refAction.current();
+    }
   };
 
   return (
     <div
-      className="absolute top-10 left-10 bg-red-500 z-10"
-      onClick={handleBack}
+      className="absolute top-10 left-10 text-[#fff] border border-[#fff] rounded-full p-2 cursor-pointer z-10"
+      onClick={handleClick}
       style={{
         display: currentModelSelected === "" ? "none" : "flex",
       }}

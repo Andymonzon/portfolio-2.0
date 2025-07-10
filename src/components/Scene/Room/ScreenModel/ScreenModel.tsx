@@ -25,9 +25,38 @@ export const ScreenModel = ({
     setIsAnimationEnd,
   } = useContextAction();
 
+  const handleBack = () => {
+    const action = actions["camaraPantalla2"];
+    if (!action) return;
+
+    refAction.current = null;
+
+    setIsAnimationEnd(false);
+
+    action.paused = false;
+    action.timeScale = -1;
+
+    action.time = action.getClip().duration;
+
+    action.play();
+
+    const onFinished = (e: any) => {
+      if (e.action === action) {
+        action.stop();
+        action.reset();
+        action.timeScale = 1;
+        setCurrentModelSelected("");
+        action.getMixer().removeEventListener("finished", onFinished);
+      }
+    };
+
+    action.getMixer().addEventListener("finished", onFinished);
+  };
+
   const handleClick = () => {
     setObjectSelectedHover("");
-    if (currentModelSelected === "monitor") return;
+    if (currentModelSelected === "monitor" || currentModelSelected !== "")
+      return;
 
     setCurrentModelSelected("monitor");
     const action = actions["camaraPantalla2"];
@@ -41,7 +70,7 @@ export const ScreenModel = ({
       const onFinished = (e: any) => {
         if (e.action === action) {
           setIsAnimationEnd(true);
-          refAction.current = action;
+          refAction.current = handleBack;
           action.getMixer().removeEventListener("finished", onFinished);
         }
       };

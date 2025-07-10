@@ -27,11 +27,59 @@ export const SpeakerModel = ({
     currentModelSelected,
     refGlobalMusic,
     dispatchIsPlaying,
+    setIsAnimationEnd,
+    refAction,
   } = useContextAction();
+
+  const handleBack = () => {
+    const actionCamara = actions["camaraRadio"];
+    const actionRadio = actions["animacionParlante"];
+    if (!actionCamara || !actionRadio) return;
+
+    refAction.current = null;
+    setIsAnimationEnd(false);
+
+    actionCamara.paused = false;
+    actionCamara.timeScale = -1;
+    actionCamara.time = actionCamara.getClip().duration;
+    actionCamara.play();
+
+    const onFinishedCamara = (e: any) => {
+      if (e.action === actionCamara) {
+        actionCamara.stop();
+        actionCamara.reset();
+        actionCamara.timeScale = 1;
+        actionCamara
+          .getMixer()
+          .removeEventListener("finished", onFinishedCamara);
+      }
+    };
+
+    actionRadio.paused = false;
+    actionRadio.timeScale = -1;
+    actionRadio.time = actionRadio.getClip().duration;
+    actionRadio.play();
+
+    const onFinishedParlante = (e: any) => {
+      if (e.action === actionRadio) {
+        actionRadio.stop();
+        actionRadio.reset();
+        actionRadio.timeScale = 1;
+        actionRadio
+          .getMixer()
+          .removeEventListener("finished", onFinishedParlante);
+        setCurrentModelSelected("");
+      }
+    };
+
+    actionCamara.getMixer().addEventListener("finished", onFinishedCamara);
+    actionRadio.getMixer().addEventListener("finished", onFinishedParlante);
+  };
 
   const handleClick = () => {
     setObjectSelectedHover("");
-    if (currentModelSelected === "parlante001") return;
+    if (currentModelSelected === "parlante001" || currentModelSelected !== "")
+      return;
 
     const actionCamara = actions["camaraRadio"];
     const actionRadio = actions["animacionParlante"];
@@ -49,6 +97,8 @@ export const SpeakerModel = ({
           actionRadio.setLoop(LoopOnce, 1);
           actionRadio.clampWhenFinished = true;
           actionRadio.play();
+          setIsAnimationEnd(true);
+          refAction.current = handleBack;
 
           actions["camaraRadio"]
             ?.getMixer()
