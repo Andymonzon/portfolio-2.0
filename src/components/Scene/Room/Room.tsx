@@ -2752,13 +2752,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
-        <mesh
-          name="papel"
-          castShadow
-          receiveShadow
-          geometry={nodes.papel.geometry}
-          material={materials["Material.026"]}
-        />
+
         <group name="Pin">
           <mesh
             name="Pin_0"
@@ -2935,41 +2929,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             </group>
           </group>
         </group>
-        <mesh
-          name="papelNota1"
-          castShadow
-          receiveShadow
-          geometry={nodes.papelNota1.geometry}
-          material={materials["initialShadingGroup.001"]}
-        />
-        <mesh
-          name="papelNota2"
-          castShadow
-          receiveShadow
-          geometry={nodes.papelNota2.geometry}
-          material={materials["initialShadingGroup.001"]}
-        />
-        <mesh
-          name="papelNota3"
-          castShadow
-          receiveShadow
-          geometry={nodes.papelNota3.geometry}
-          material={materials["initialShadingGroup.001"]}
-        />
-        <mesh
-          name="papelNota4"
-          castShadow
-          receiveShadow
-          geometry={nodes.papelNota4.geometry}
-          material={materials["initialShadingGroup.001"]}
-        />
-        <mesh
-          name="papelNota5"
-          castShadow
-          receiveShadow
-          geometry={nodes.papelNota5.geometry}
-          material={materials["initialShadingGroup.001"]}
-        />
+
         <group name="reloj">
           <group name="root008">
             <group name="GLTF_SceneRootNode008">
@@ -3192,34 +3152,7 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
             />
           </group>
         </group>
-        <mesh
-          name="papel2"
-          castShadow
-          receiveShadow
-          geometry={nodes.papel2.geometry}
-          material={materials["Material.048"]}
-        />
-        <mesh
-          name="papel002"
-          castShadow
-          receiveShadow
-          geometry={nodes.papel002.geometry}
-          material={materials["Material.049"]}
-        />
-        <mesh
-          name="papel004"
-          castShadow
-          receiveShadow
-          geometry={nodes.papel004.geometry}
-          material={materials["Material.050"]}
-        />
-        <mesh
-          name="papel001"
-          castShadow
-          receiveShadow
-          geometry={nodes.papel001.geometry}
-          material={materials["Material.051"]}
-        />
+
         <mesh
           name="Cube003"
           castShadow
