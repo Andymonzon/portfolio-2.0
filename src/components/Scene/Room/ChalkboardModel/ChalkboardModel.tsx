@@ -81,7 +81,7 @@ export const ChalkboardModel = ({
   };
 
   const handlePointerOver = (id: string) => {
-    if (currentModelSelected === "contornoPizarra") return;
+    if (currentModelSelected) return;
     setObjectSelectedHover(id);
   };
 

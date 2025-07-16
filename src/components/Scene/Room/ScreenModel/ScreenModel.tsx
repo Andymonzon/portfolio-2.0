@@ -80,7 +80,7 @@ export const ScreenModel = ({
   };
 
   const handlePointerOver = (id: string) => {
-    if (currentModelSelected === "monitor") return;
+    if (currentModelSelected) return;
     setObjectSelectedHover(id);
   };
 

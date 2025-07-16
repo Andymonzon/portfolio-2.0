@@ -52,6 +52,7 @@ export const SpeakerModel = ({
         actionCamara
           .getMixer()
           .removeEventListener("finished", onFinishedCamara);
+        setCurrentModelSelected("");
       }
     };
 
@@ -68,7 +69,6 @@ export const SpeakerModel = ({
         actionRadio
           .getMixer()
           .removeEventListener("finished", onFinishedParlante);
-        setCurrentModelSelected("");
       }
     };
 
@@ -111,7 +111,7 @@ export const SpeakerModel = ({
   };
 
   const handlePointerOver = (id: string) => {
-    if (currentModelSelected === "parlante001") return;
+    if (currentModelSelected) return;
     setObjectSelectedHover(id);
   };
 
