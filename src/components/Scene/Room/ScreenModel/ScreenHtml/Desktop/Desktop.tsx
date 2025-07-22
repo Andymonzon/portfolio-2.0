@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { Browser } from "./Browser/Browser";
 import type { AppNames, AppState } from "../ScreenHtml";
 
-import WindowsFolder from "/screen/desktop/folder.png";
+// import WindowsFolder from "/screen/desktop/folder.png";
 
 interface Props {
   setIsMinimized: React.Dispatch<
