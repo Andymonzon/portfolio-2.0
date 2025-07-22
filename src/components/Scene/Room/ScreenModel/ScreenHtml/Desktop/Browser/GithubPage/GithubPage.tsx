@@ -47,7 +47,6 @@ export const GithubPage = ({ selectedTab }: Props) => {
     const fetchInfo = async () => {
       const { data } = await githubFetchProfile();
       setInfo(data);
-      console.log(data);
     };
 
     fetchRepos();
