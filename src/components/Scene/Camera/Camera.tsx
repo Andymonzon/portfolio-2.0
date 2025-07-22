@@ -1,12 +1,12 @@
 import { PerspectiveCamera } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+// import { useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 import { PerspectiveCamera as PerspectiveCameraType } from "three";
 
 export const Camera = () => {
   const cameraRef = useRef<PerspectiveCameraType | null>(null);
-  const mouse = useRef({ x: 0, y: 0 });
-  const initialRotation = useRef({ x: 3.02, y: 0.921, z: -3.04 });
+  // const mouse = useRef({ x: 0, y: 0 });
+  // const initialRotation = useRef({ x: 3.02, y: 0.921, z: -3.04 });
 
   // useEffect(() => {
   //   const handleMouseMove = (event: MouseEvent) => {
@@ -38,7 +38,7 @@ export const Camera = () => {
     <PerspectiveCamera
       name="Camera"
       makeDefault
-      ref={cameraRef}
+      ref={cameraRef as any}
       far={1000}
       near={0.1}
       fov={32.269}
