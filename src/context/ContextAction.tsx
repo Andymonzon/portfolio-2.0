@@ -4,7 +4,6 @@ import {
   useRef,
   useState,
   type Dispatch,
-  type Ref,
 } from "react";
 import {
   initialMusicState,
