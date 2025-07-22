@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useGLTF, useAnimations } from "@react-three/drei";
-import { SpotLight } from "three";
 import { useFrame } from "@react-three/fiber";
-import { MeshstandardMaterial } from "three";
+import { Mesh, SpotLight } from "three";
 import { ScreenModel } from "./ScreenModel/ScreenModel";
 import { Camera } from "../Camera/Camera";
 import { SpeakerModel } from "./SpeakerModel/SpeakerModel";
@@ -16,12 +15,12 @@ export const Room = ({ lightLampRef, ...props }: Props) => {
   const [objectSelectedHover, setObjectSelectedHover] = useState<string>("");
 
   const group = useRef(null);
-  const { nodes, materials, animations, cameras } = useGLTF(
+  const { nodes, materials, animations } = useGLTF(
     "/model/cuartoPortfolio1.glb"
-  );
+  ) as any;
   const { actions } = useAnimations(animations, group);
 
-  const lampRef = useRef<MeshstandardMaterial>(null);
+  const lampRef = useRef<Mesh>(null);
 
   useFrame(() => {
     actions["mob_huevoAction"]?.play();
