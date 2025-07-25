@@ -2,18 +2,22 @@ import { useProgress } from "@react-three/drei";
 import { useEffect, useState } from "react";
 
 export const Loader = () => {
-  // TODO: revisar si es necesario el boton de start y mejorar el diseño del loader
+  // TODO: revisar y mejorar el diseño del loader
   const [showScene, setShowScene] = useState(false);
 
   const [dot, setDot] = useState(0);
-  const { loaded, total } = useProgress();
+  const { progress } = useProgress();
 
   useEffect(() => {
-    console.log(loaded, total);
-    if (loaded === total) {
-      setShowScene(true);
+    if (progress === 100) {
+      console.log("cargando");
+      const timeout = setTimeout(() => {
+        setShowScene(true);
+      }, 1000);
+
+      return () => clearTimeout(timeout);
     }
-  }, [loaded, total]);
+  }, [progress]);
 
   useEffect(() => {
     const interval = setInterval(() => {
