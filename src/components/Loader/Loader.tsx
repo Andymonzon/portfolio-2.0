@@ -6,14 +6,14 @@ export const Loader = () => {
   const [showScene, setShowScene] = useState(false);
 
   const [dot, setDot] = useState(0);
-  const [loading, setLoading] = useState(true);
-  const { loaded } = useProgress();
+  const { loaded, total } = useProgress();
 
   useEffect(() => {
-    if (loaded === 131) {
-      setLoading(false);
+    console.log(loaded, total);
+    if (loaded === total) {
+      setShowScene(true);
     }
-  }, [loaded]);
+  }, [loaded, total]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -29,21 +29,7 @@ export const Loader = () => {
 ${showScene ? "opacity-0 pointer-events-none" : "opacity-100"}
 `}
     >
-      {loading && (
-        <p className="text-5xl font-bold">Cargando{".".repeat(dot)}</p>
-      )}
-      {!loading && loaded === 131 && (
-        <button
-          onClick={() => setShowScene(true)}
-          className="text-white py-4 px-10 rounded-full cursor-pointer text-5xl"
-          style={{
-            background:
-              "linear-gradient(359deg, rgba(0, 0, 0, 1) 0%, rgba(44, 33, 117, 1)  50%,rgba(29, 14, 89, 1) 100%)",
-          }}
-        >
-          Start
-        </button>
-      )}
+      <p className="text-5xl font-bold">Cargando{".".repeat(dot)}</p>
     </div>
   );
 };
