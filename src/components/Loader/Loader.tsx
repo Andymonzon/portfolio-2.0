@@ -10,7 +10,6 @@ export const Loader = () => {
   const { loaded } = useProgress();
 
   useEffect(() => {
-    console.log(loaded);
     if (loaded === 131) {
       setLoading(false);
     }
