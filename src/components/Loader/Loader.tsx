@@ -2,6 +2,7 @@ import { useProgress } from "@react-three/drei";
 import { useEffect, useState } from "react";
 
 export const Loader = () => {
+  // TODO: revisar si es necesario el boton de start y mejorar el diseño del loader
   const [showScene, setShowScene] = useState(false);
 
   const [dot, setDot] = useState(0);
